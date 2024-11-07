@@ -1,6 +1,19 @@
-# AWebMuanyagNagykerFrontend
+# Matejka-Muanyag-Nagyker-Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+This repository contains the Frontend code of the Matejka Műanyagárú Nagykereskedés Website. The backend stored in a separate repository.
+
+
+## Project Features
+
+- Contact form with frontend validation
+- responsive
+- Search
+
+
+## Stack
+
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+- Bootstrap
 
 ## Development server
 

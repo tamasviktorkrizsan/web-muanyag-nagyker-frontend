@@ -16,13 +16,20 @@
 
 
       <nav id="sidebar" *ngIf="isSidebarOpen">
-        <div class="sidebar-header">
-          <h4>
-            <i class="bi bi-list"></i>
+        <div class="sidebar-header" (click)="toggleSidebar()">
+
+
+
+            <h4>
+
+              <i class="bi bi-list"></i>
 
             Menü
 
           </h4>
+
+
+
           <hr>
 
           <!--<img src="assets/img/layout/logo.png" width="311" height="80" alt="" border="0">-->

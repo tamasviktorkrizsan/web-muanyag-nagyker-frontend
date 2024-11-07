@@ -74,6 +74,7 @@ a:focus {
 #sidebar .sidebar-header {
   padding: 20px;
   background: #60c700;
+  cursor: pointer;
 }
 
 #sidebar ul.components {
@@ -179,7 +180,7 @@ position: absolute;
   #sidebar.active {
     margin-left: 0;
   }
-  #sidebarCollapse span {
+  .sidebarCollapse span {
     display: none;
   }
 }
