@@ -1,166 +1,38 @@
-<div class="container">
-
-
-<div class = "row">
-  <div class = "col-xl-6">
-  <table border="0" cellspacing="10" >
-    <tr><td>
-      <font size="6"><b>Matejka Márton</b></font><br>
-      <font size="5">mûanyagáru nagykereskedés</font><p>
-      <font size="4">2161 Csomád Templom u. 15</font><p>
-        <strong>Tel/Fax: </strong><a href="tel:06-28-366-683">06-28-366-683</a><br>
-        <strong>Mobil: </strong><a href="tel:06-30-9519-461">06-30-9519-461<br>
-        <strong>E-mail: </strong>
-       <a href="mailto:matejkamarton@freemail.hu">matejkamarton&#64;freemail.hu</a><br>
-    </td>
-  </div>
-
-      <td><img src="assets/img/content/contact/warehouse.jpg" width="312" height="221" alt="" border="0"></td></tr>
-  </table>
-</divrow>
-
-  <iframe width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.hu/maps?f=d&amp;source=s_d&amp;saddr=&amp;daddr=47.659153,19.226256&amp;hl=hu&amp;geocode=&amp;mra=mift&amp;mrsp=1&amp;sz=19&amp;sll=47.658991,19.227051&amp;sspn=0.001955,0.005415&amp;ie=UTF8&amp;ll=47.658992,19.227051&amp;spn=0.002168,0.003219&amp;z=17&amp;output=embed"></iframe><br /><small><a href="http://maps.google.hu/maps?f=d&amp;source=embed&amp;saddr=&amp;daddr=47.659153,19.226256&amp;hl=hu&amp;geocode=&amp;mra=mift&amp;mrsp=1&amp;sz=19&amp;sll=47.658991,19.227051&amp;sspn=0.001955,0.005415&amp;ie=UTF8&amp;ll=47.658992,19.227051&amp;spn=0.002168,0.003219&amp;z=17" style="color:#0000FF;text-align:left">Nagyobb térképre váltás</a></small>
-
 
 
   <div class="row content-text">
-    <div class="col-sm-12 col-xl-6 align-middle">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
 
-      <p class="h1" style="justify-content: center">Kapcsolatfelvétel:</p>
-      <p>Kérjük, az alábbi űrlap kitöltésével vegye fel velünk a kapcsolatot, és kérjen ajánlatot!<br>
-        (A <span class="warning-sign">*</span>-gal jelölt mezők kitöltése kötelező!)
-      </p>
-
+      <p class="h1">Kapcsolat:</p><hr> <br>
     </div>
-
   </div>
 
 
-  <!--
-    <?php include "../middleware/form_validation.php"; ?>
-    <form id="form_contact_us" method="post" action="<?php echo htmlspecialchars("/contact_us");?>">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 default-font">
+      <!--<i class="bi-alarm"></i>
+      <i class="bi bi-house-door-fill"></i>-->
+     <!-- <ng-icon name="bootstrap0CircleFill"></ng-icon>-->
+      <b>Matejka Márton</b><br>
+      műanyagáru nagykereskedés<p>
+      2161 Csomád Templom u. 15 <br>
+      (<a href="https://maps.app.goo.gl/wg7ZmFX9CGTA14jr5" target="_blank">google maps</a>)<p>
+        <strong>Tel/Fax: </strong><a href="tel:06-28-366-683">06-28-366-683</a><br>
+        <strong>Mobil: </strong><a href="tel:06-30-9519-461">06-30-9519-461</a><br>
+        <strong>E-mail: </strong>
+       <a href="mailto:matejkamarton@freemail.hu">matejkamarton&#64;freemail.hu</a><br>
 
+    </div>
 
-    <div class="row content-text">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 default-font text-center">
 
-      <div class="col-sm-12 col-xl-6">
+      <img src="assets/img/content/contact/warehouse.jpg" width="312" height="221" alt="" border="0">
 
-        <label for="select_subject"><span class="warning-sign">*</span>Tárgy:</label>
-        <select class="form-select" id="select_subject" name="submit_subject">
-          <option value="nincs megadva" selected>Válasszon tárgyat!</option>
-          <option value="ajánlatkérés">ajánlatkérés</option>
-          <option value="egyéb kapcsolatfelvétel">egyéb kapcsolatfelvétel</option>
-          <option value="meglévő ügyfél üzenete">meglévő ügyfél üzenete</option>
-        </select>
-        <span class="warning-sign"><?php echo $message_subject_error;?></span>
+    </div>
+  </div>
 
-        <script type="text/javascript">
-          document.getElementById('select_subject').value = "<?php keep_form("submit_subject", "nincs megadva");?>";
-        </script>
+<app-contact-form></app-contact-form>
 
-
-        <br>
-
-        <form>
-
-        <label for="select_corp_type">Vállalkozási forma:</label>
-        <select class="form-select" id="select_corp_type" name="submit_corp_type">
-          <option value="nincs megadva" selected>Válasszon vállalkozási formát!</option>
-          <option value="bt.">bt.</option>
-          <option value="kkt. kft. zrt. nonprofit cég"> kkt. kft. zrt. nonprofit cég</option>
-          <option value="egyesület">egyesület</option>
-          <option value="alapítvány">alapítvány</option>
-          <option value="egyéb jogi személy">egyéb jogi személy</option>
-          <option value="egyéni vállalkozó/egyéni cég">egyéni vállalkozó/egyéni cég</option>
-          <option value="önálló tevékenység">önálló tevékenység</option>
-          <option value="önálló tevékenység">nem gazdasági tevékenységet folytató magánszemély</option>
-        </select>
-        <script type="text/javascript">
-          document.getElementById('select_corp_type').value = "<?php keep_form("submit_corp_type", "nincs megadva");?>";
-        </script>
-
-        <br>
-
-        <label for="input_name"><span class="warning-sign">*</span>Név:</label>
-        <input type="text" class="form-control" id="input_name" name="submit_name" data-toggle="tooltip" data-placement="top" value="<?php keep_form("submit_name"); ?>">
-        <span class="warning-sign"><?php echo $nameError;?></span>
-        <br>
-
-
-        <label for="input_tax_id">Adószám:</label>
-        <div class="input-group">
-
-          <input type="text" class="form-control <?php echo $error_display;?>" id="input_tax_id" name="submit_tax_id"
-                 placeholder="12345678-1-12" maxlength="13" data-toggle="tooltip" data-placement="auto" title="Adószám formátum: 12345678-1-12" value="<?php keep_form("submit_tax_id"); ?>">
-
-          <div class="invalid-feedback"><?php echo $tax_id_error;?></div>
-        </div>
-
-        <br>
-
-        <label for="input_corp_id">Cégjegyzékszám:</label>
-        <div class="input-group">
-
-          <input type="text" class="form-control <?php echo $error_display;?>" id="input_corp_id" name="submit_corp_id"
-                 placeholder="12-12-123456" data-toggle="tooltip" data-placement="auto" title="Adószám formátum: 12345678-1-12"
-                 value="<?php keep_form("submit_corp_id"); ?>">
-
-          <div class="invalid-feedback"><?php echo $corp_id_error;?></div>
-        </div>
-        <br>
-
-
-        <label for="email"><span class="warning-sign">*</span>E-mail cím:</label>
-        <input type="email" class="form-control" name="submit_email" placeholder="vallalkozás@gmail.com" maxlength="255" value="<?php keep_form("submit_email"); ?>">
-        <span class="warning-sign"><?php echo $emailError;?></span>
-        <br>
-
-
-
-      </div>
-      <div class="col-sm-12 col-xl-6">
-
-        <label for="input_phone">Telefonszám:</label>
-        <input type="tel" id="input_phone" class="form-control" name="submit_phone" placeholder="+36309481590" value="<?php keep_form("submit_phone"); ?>">
-        <span class="warning-sign"><?php echo $phoneError;?></span>
-        <br>
-
-
-        <label for="message"><span class="warning-sign">*</span>Üzenet:</label>
-        <textarea name="submit_message" id="message" class="form-control" rows="15" cols="15"><?php keep_form("submit_message"); ?></textarea>
-        <br>
-      </div>
-
-
-      <div class="col-sm-12 col-xl-12">
-        <br>
-        <p>
-          <input type="checkbox" id="check_pp" name="submit_pp" value="Megadva" onchange="document.getElementById('submit_form').enabled = this.checked;">
-
-          <label for="check_pp">Elolvastam és elfogadtam az <a href="#" target="_blank">Adatkezelési Tájékoztatót</a></label>
-          <br><span class="warning-sign"><?php echo $error_pp;?></span>
-        </p>
-
-
-
-        <button type="submit" id="submit_form" form="form_contact_us" class="g-recaptcha"
-                data-sitekey="6LcZQRokAAAAAL1uEjwS9qeQ6MTA0ywb806bKSoj"
-                data-callback='onSubmit'
-                data-action='submit'>Küldés</button>
-
-
-    </form>-->
-
-
-</div>
-<!--</div>-->
-<!--
-<script type="text/javascript" src="js/form.js"></script>
--->
-
-
-
-<!--</div>-->
 
 
 

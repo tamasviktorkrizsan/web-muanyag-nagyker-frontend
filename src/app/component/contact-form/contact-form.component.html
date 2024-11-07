@@ -1,0 +1,265 @@
+<!--{
+"message_subject": "test message",
+"name":"Mr. X",
+"email":"misterx@gmail.com",
+"message":"dkfdfbefefhhfohhwoeweiwewqewqewe"
+
+}
+
+5 részből álló form
+
+- név*
+
+- e-mail*
+
+- telefon
+
+- adószám
+
+- üzenet
+
+-->
+
+
+<div class="row content-text">
+  <div class="col-sm-12 col-xl-6 align-middle">
+
+    <p class="h2" style="justify-content: center">Kapcsolatfelvétel:</p>
+    <p>Kérjük, az alábbi űrlap kitöltésével vegye fel velünk a kapcsolatot, és kérjen ajánlatot!<br>
+      (A <span class="warning-sign">*</span>-gal jelölt mezők kitöltése kötelező!)
+    </p>
+  </div>
+
+</div>
+<br>
+
+<form (ngSubmit)="onSubmit()">
+
+  <div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+
+<!--
+  <label for="textInput">Enter Text:</label>
+  <input type="text" id="textInput" [(ngModel)]="inputText" name="inputText" required>
+  <button type="submit">Submit</button>-->
+
+
+
+    <label for="input_name"><span class="warning-sign">*</span>Név:</label>
+    <input type="text" class="form-control" id="input_name" name="submit_name" data-toggle="tooltip" data-placement="top" value="">
+    <span class="warning-sign"><!--<?php echo $nameError;?>--></span>
+    <br>
+
+
+    <label for="email"><span class="warning-sign">*</span>E-mail cím:</label>
+    <input type="email" class="form-control" id="email" name="submit_email" placeholder="vallalkozás@gmail.com" maxlength="255" value="">
+    <span class="warning-sign"><!--<?php echo $emailError;?>--></span>
+    <br>
+
+
+
+  </div>
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+
+
+      <label for="input_phone">Telefonszám:</label>
+      <input type="tel" id="input_phone" class="form-control" name="submit_phone" placeholder="+36309481590" value="">
+      <span class="warning-sign"><!--<?php echo $phoneError;?>--></span>
+      <br>
+
+
+      <label for="input_tax_id">Adószám:</label>
+      <div class="input-group">
+
+        <input type="text" class="form-control" id="input_tax_id" name="submit_tax_id"
+               placeholder="12345678-1-12" maxlength="13" data-toggle="tooltip" data-placement="auto" title="Adószám formátum: 12345678-1-12" value="">
+
+        <div class="invalid-feedback"><!--<?php echo $tax_id_error;?>--></div>
+      </div>
+
+      <br>
+
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+      <label for="message"><span class="warning-sign">*</span>Üzenet:</label>
+      <textarea name="submit_message" id="message" class="form-control" rows="15" cols="15"></textarea>
+      <br>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+      <input type="checkbox" id="check_pp" name="submit_pp" value="Megadva" onchange="document.getElementById('submit_form').enabled = this.checked;">
+
+      <label for="check_pp">Elolvastam és elfogadtam az <a href="#" target="_blank">Adatkezelési Tájékoztatót</a></label>
+      <br><span class="warning-sign"><!--<?php echo $error_pp;?>--></span>
+
+      <br>
+
+      <button type="submit" id="submit_form" form="form_contact_us" class="g-recaptcha"
+              data-sitekey="6LcZQRokAAAAAL1uEjwS9qeQ6MTA0ywb806bKSoj"
+              data-callback='onSubmit'
+              data-action='submit'>Küldés</button>
+
+
+    </div>
+  </div>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
+<?php include "../middleware/form_validation.php"; ?>
+<form id="form_contact_us" method="post" action="<?php echo htmlspecialchars("/contact_us");?>">
+
+
+<div class="row content-text">
+
+  <div class="col-sm-12 col-xl-6">
+
+
+
+    <label for="select_subject"><span class="warning-sign">*</span>Tárgy:</label>
+    <select class="form-select" id="select_subject" name="submit_subject">
+      <option value="nincs megadva" selected>Válasszon tárgyat!</option>
+      <option value="ajánlatkérés">ajánlatkérés</option>
+      <option value="egyéb kapcsolatfelvétel">egyéb kapcsolatfelvétel</option>
+      <option value="meglévő ügyfél üzenete">meglévő ügyfél üzenete</option>
+    </select>
+    <span class="warning-sign"><?php echo $message_subject_error;?></span>
+
+    <script type="text/javascript">
+      document.getElementById('select_subject').value = "<?php keep_form("submit_subject", "nincs megadva");?>";
+    </script>
+
+
+    <br>
+
+
+
+
+    <label for="select_corp_type">Vállalkozási forma:</label>
+    <select class="form-select" id="select_corp_type" name="submit_corp_type">
+      <option value="nincs megadva" selected>Válasszon vállalkozási formát!</option>
+      <option value="bt.">bt.</option>
+      <option value="kkt. kft. zrt. nonprofit cég"> kkt. kft. zrt. nonprofit cég</option>
+      <option value="egyesület">egyesület</option>
+      <option value="alapítvány">alapítvány</option>
+      <option value="egyéb jogi személy">egyéb jogi személy</option>
+      <option value="egyéni vállalkozó/egyéni cég">egyéni vállalkozó/egyéni cég</option>
+      <option value="önálló tevékenység">önálló tevékenység</option>
+      <option value="önálló tevékenység">nem gazdasági tevékenységet folytató magánszemély</option>
+    </select>
+    <script type="text/javascript">
+      document.getElementById('select_corp_type').value = "<?php keep_form("submit_corp_type", "nincs megadva");?>";
+    </script>
+
+    <br>
+
+    <label for="input_name"><span class="warning-sign">*</span>Név:</label>
+    <input type="text" class="form-control" id="input_name" name="submit_name" data-toggle="tooltip" data-placement="top" value="<?php keep_form("submit_name"); ?>">
+    <span class="warning-sign"><?php echo $nameError;?></span>
+    <br>
+
+
+    <label for="input_tax_id">Adószám:</label>
+    <div class="input-group">
+
+      <input type="text" class="form-control <?php echo $error_display;?>" id="input_tax_id" name="submit_tax_id"
+             placeholder="12345678-1-12" maxlength="13" data-toggle="tooltip" data-placement="auto" title="Adószám formátum: 12345678-1-12" value="<?php keep_form("submit_tax_id"); ?>">
+
+      <div class="invalid-feedback"><?php echo $tax_id_error;?></div>
+    </div>
+
+    <br>
+
+    <label for="input_corp_id">Cégjegyzékszám:</label>
+    <div class="input-group">
+
+      <input type="text" class="form-control <?php echo $error_display;?>" id="input_corp_id" name="submit_corp_id"
+             placeholder="12-12-123456" data-toggle="tooltip" data-placement="auto" title="Adószám formátum: 12345678-1-12"
+             value="<?php keep_form("submit_corp_id"); ?>">
+
+      <div class="invalid-feedback"><?php echo $corp_id_error;?></div>
+    </div>
+    <br>
+
+
+    <label for="email"><span class="warning-sign">*</span>E-mail cím:</label>
+    <input type="email" class="form-control" name="submit_email" placeholder="vallalkozás@gmail.com" maxlength="255" value="<?php keep_form("submit_email"); ?>">
+    <span class="warning-sign"><?php echo $emailError;?></span>
+    <br>
+
+
+
+  </div>
+  <div class="col-sm-12 col-xl-6">
+
+    <label for="input_phone">Telefonszám:</label>
+    <input type="tel" id="input_phone" class="form-control" name="submit_phone" placeholder="+36309481590" value="<?php keep_form("submit_phone"); ?>">
+    <span class="warning-sign"><?php echo $phoneError;?></span>
+    <br>
+
+
+    <label for="message"><span class="warning-sign">*</span>Üzenet:</label>
+    <textarea name="submit_message" id="message" class="form-control" rows="15" cols="15"><?php keep_form("submit_message"); ?></textarea>
+    <br>
+  </div>
+
+
+  <div class="col-sm-12 col-xl-12">
+    <br>
+    <p>
+      <input type="checkbox" id="check_pp" name="submit_pp" value="Megadva" onchange="document.getElementById('submit_form').enabled = this.checked;">
+
+      <label for="check_pp">Elolvastam és elfogadtam az <a href="#" target="_blank">Adatkezelési Tájékoztatót</a></label>
+      <br><span class="warning-sign"><?php echo $error_pp;?></span>
+    </p>
+
+
+
+    <button type="submit" id="submit_form" form="form_contact_us" class="g-recaptcha"
+            data-sitekey="6LcZQRokAAAAAL1uEjwS9qeQ6MTA0ywb806bKSoj"
+            data-callback='onSubmit'
+            data-action='submit'>Küldés</button>
+
+
+
+
+
+  </div>
+
+</div>
+
+</form>
+
+
+</div>
+</div>
+<script type="text/javascript" src="js/form.js"></script>
+
+<?php require_once "../view/layout/footer.php"; ?>
+
+-->

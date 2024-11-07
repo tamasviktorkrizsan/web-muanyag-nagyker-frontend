@@ -17,7 +17,16 @@
 
       <nav id="sidebar" *ngIf="isSidebarOpen">
         <div class="sidebar-header">
-          <h4><!--Matejka Műanyagárú Nagykereskedelem--> Menü</h4>
+          <h4>
+            <i class="bi bi-list"></i>
+
+            Menü
+
+          </h4>
+          <hr>
+
+          <!--<img src="assets/img/layout/logo.png" width="311" height="80" alt="" border="0">-->
+
         </div>
 
         <ul class="list-unstyled components active">
@@ -167,7 +176,9 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              Matejka Műanyagárú Nagykereskedelem
+              <img src="assets/img/layout/logo.png" width="311" height="80" alt="" border="0">
+
+              <!--Matejka Műanyagárú Nagykereskedelem-->
 
 
               <!--<ul class="nav navbar-nav ml-auto">
@@ -185,16 +196,16 @@
                 </li>
               </ul>-->
 
-              <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="toggleSidebar()">
+              <button type="button" id="sidebarCollapse" class="btn btn-info menu-button" (click)="toggleSidebar()">
                 <i class="fas fa-align-left"></i>
-                <span>Menü</span>
+                <span><i class="bi bi-list"></i></span>
               </button>
 
 
             </div>
           </div>
         </nav>
-
+        <div class="container">
         <router-outlet></router-outlet>
 
 
@@ -211,35 +222,7 @@
 
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 
 
