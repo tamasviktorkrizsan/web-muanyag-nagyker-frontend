@@ -33,7 +33,7 @@
 </div>
 <br>
 
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
   <div class="row">
   <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
@@ -46,13 +46,15 @@
 
 
     <label for="input_name"><span class="warning-sign">*</span>Név:</label>
-    <input type="text" class="form-control" id="input_name" name="submit_name" data-toggle="tooltip" data-placement="top" value="">
+    <input type="text" class="form-control" id="input_name" name="submit_name"
+           data-toggle="tooltip" data-placement="top" value="" formControlName="name">
     <span class="warning-sign"><!--<?php echo $nameError;?>--></span>
     <br>
 
 
     <label for="email"><span class="warning-sign">*</span>E-mail cím:</label>
-    <input type="email" class="form-control" id="email" name="submit_email" placeholder="vallalkozás@gmail.com" maxlength="255" value="">
+    <input type="email" class="form-control" id="email" name="submit_email" placeholder="vallalkozás@gmail.com"
+           maxlength="255" value="" formControlName="email">
     <span class="warning-sign"><!--<?php echo $emailError;?>--></span>
     <br>
 
@@ -63,7 +65,8 @@
 
 
       <label for="input_phone">Telefonszám:</label>
-      <input type="tel" id="input_phone" class="form-control" name="submit_phone" placeholder="+36309481590" value="">
+      <input type="tel" id="input_phone" class="form-control" name="submit_phone" placeholder="+36309481590"
+             value="" formControlName="phone">
       <span class="warning-sign"><!--<?php echo $phoneError;?>--></span>
       <br>
 
@@ -72,7 +75,10 @@
       <div class="input-group">
 
         <input type="text" class="form-control" id="input_tax_id" name="submit_tax_id"
-               placeholder="12345678-1-12" maxlength="13" data-toggle="tooltip" data-placement="auto" title="Adószám formátum: 12345678-1-12" value="">
+               placeholder="12345678-1-12" maxlength="13" data-toggle="tooltip" data-placement="auto"
+               title="Adószám formátum: 12345678-1-12" value="" mask="99999999-9-99" formControlName="taxId">
+
+        <!---->
 
         <div class="invalid-feedback"><!--<?php echo $tax_id_error;?>--></div>
       </div>
@@ -88,7 +94,7 @@
     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
       <label for="message"><span class="warning-sign">*</span>Üzenet:</label>
-      <textarea name="submit_message" id="message" class="form-control" rows="15" cols="15"></textarea>
+      <textarea name="submit_message" id="message" class="form-control" rows="15" cols="15" formControlName="message"></textarea>
       <br>
     </div>
   </div>
@@ -105,15 +111,16 @@
 
       <br>
 
-      <button type="submit" id="submit_form" form="form_contact_us" class="g-recaptcha"
+    <!--  <button type="submit" id="submit_form" form="form_contact_us" class="g-recaptcha"
               data-sitekey="6LcZQRokAAAAAL1uEjwS9qeQ6MTA0ywb806bKSoj"
               data-callback='onSubmit'
-              data-action='submit'>Küldés</button>
+              data-action='submit'>Küldés</button>-->
 
 
     </div>
   </div>
 
+  <button type="submit" [disabled]="contactForm.invalid">Submit</button>
 
 </form>
 
