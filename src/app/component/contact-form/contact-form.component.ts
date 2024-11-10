@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, Injectable} from '@angular/core';
 import {ReactiveFormsModule, FormBuilder, Validators, FormGroup} from "@angular/forms";
-
+import {MailFormService} from "../../service/mail-form.service";
 import {NgxMaskDirective} from 'ngx-mask';
+import {HttpClient} from "@angular/common/http";
 
 
 @Component({
@@ -19,15 +20,27 @@ import {NgxMaskDirective} from 'ngx-mask';
 
 
 
-
-
+@Injectable({
+  providedIn: 'root'
+})
 export class ContactFormComponent {
 
 
-    contactForm!: FormGroup;
+  // localhost/github/project/a-web-muanyag-nagyker-backend/backend/service/mail/api.php
+
+   contactForm!: FormGroup;
 
 
-    constructor(private formBuilder: FormBuilder) {
+
+   http!: HttpClient;
+
+
+
+
+    constructor(private formBuilder: FormBuilder,  private mailFormService: MailFormService) {
+
+
+
 
       this.contactForm = this.formBuilder.group({
         name: ['', Validators.required],
@@ -39,9 +52,29 @@ export class ContactFormComponent {
       });
     }
 
+
     onSubmit() {
+
+   /* if (this.contactForm.valid) {
+
+      console.log(this.contactForm.value);
+      this.http.post(this.formUrl,this.contactForm.value).subscribe((res) => {
+                console.log(res);
+              });
+      }*/
+
+
       if (this.contactForm.valid) {
-        console.log(this.contactForm.value);
+        this.mailFormService.sendData(this.contactForm.value).subscribe(
+          (response) => {
+            console.log('POST response:', response);
+          },
+          (error) => {
+            console.error('POST error:', error);
+          }
+        );
+      } else {
+        console.error('Form is invalid');
       }
     }
 
@@ -50,42 +83,5 @@ export class ContactFormComponent {
 
 
 
-
-
-
-
-
-
-
-/*
-
-
-  contactForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-    phone: new FormControl(''),
-    taxNumber: new FormControl(''),
-    message: new FormControl('')
-
-  });
-
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.contactForm.value);
-  }
-
-*/
-
-
-
-
-
-
-
-  // inputText: string = '';
-
-  /*onSubmit() {
-    alert(`You entered: ${this.inputText}`);
-  }*/
 
 }
