@@ -39,6 +39,9 @@
         <ul class="list-unstyled components active">
 
           <li>
+            <a href="/search" routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page">Termékkereső</a>
+          </li>
+          <li>
             <a href="/welcome" routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page">Rólunk</a>
           </li>
           <li>
@@ -164,7 +167,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <img src="assets/img/layout/logo.png" width="311" height="80" alt="" border="0">
+              <img [ngSrc]="'/public/assets/img/layout/logo.png'" width="311" height="80" alt="" border="0" priority="">
 
               <!--Matejka Műanyagárú Nagykereskedelem-->
 

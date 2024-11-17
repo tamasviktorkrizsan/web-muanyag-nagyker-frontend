@@ -1,6 +1,6 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {RouterOutlet, RouterLink, RouterLinkActive,} from '@angular/router';
 // import * as $ from 'jquery';
 import {HeaderComponent} from "./layout/header/header.component";
 import {FooterComponent} from "./layout/footer/footer.component";
@@ -10,7 +10,7 @@ import {SidebarComponent} from "./layout/sidebar/sidebar.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, SidebarComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, FooterComponent, SidebarComponent, NgOptimizedImage],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
