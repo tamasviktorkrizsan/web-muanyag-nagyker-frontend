@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {NgxMaskDirective} from "ngx-mask";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {MailFormService} from "../../service/mail-form.service";
+import {SearchCatalogItemService} from "../../service/search-catalog-item.service";
 import {CatalogItemComponent} from "../../component/catalog-item/catalog-item.component";
 
 @Component({
@@ -29,13 +29,13 @@ export class SearchComponent {
 
 
 
-  constructor(private formBuilder: FormBuilder,  private mailFormService: MailFormService) {
+  constructor(private formBuilder: FormBuilder,  private searchCatalogItemService: SearchCatalogItemService) {
 
 
 
 
     this.searchForm = this.formBuilder.group({
-      name: ['', Validators.required, Validators.minLength(3)]
+      search_input: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
 
@@ -52,7 +52,7 @@ export class SearchComponent {
 
 
     if (this.searchForm.valid) {
-      this.mailFormService.sendData(this.searchForm.value).subscribe(
+      this.searchCatalogItemService.sendData(this.searchForm.value).subscribe(
         (response) => {
           console.log('POST response:', response);
         },
@@ -60,6 +60,8 @@ export class SearchComponent {
           console.error('POST error:', error);
         }
       );
+
+
     } else {
       console.error('Form is invalid');
     }
