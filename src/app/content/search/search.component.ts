@@ -35,7 +35,7 @@ export class SearchComponent {
 
 
     this.searchForm = this.formBuilder.group({
-      search_input: ['', [Validators.required, Validators.minLength(3)]]
+      search: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
 
