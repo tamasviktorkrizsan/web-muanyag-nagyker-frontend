@@ -1,41 +1,21 @@
-<p>catalog-item works!</p>
 
-<div class="row">
-
-
-
-  <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
-
-    <div class="card border-success mb-3">
-      <div class="card-header">virágcserepek</div>
-      <img class="card-img-top item-img" [ngSrc]="'/public/assets/img/content/contact/warehouse.jpg'" width="250" height="180" alt="Card image cap" >
+<div class="col-sm-12 col-md-3 col-lg-3 col-xl-3" id="search_results">
+  <div class="card border-success mb-3">
+      <div class="card-header"> {{ item.category }} </div>
+      <img class="card-img-top item-img" src="{{ item.img }}" width="250" height="180" alt="Card image cap" >
       <div class="card-body">
-        <h4 class="card-title">Ravenna cserép</h4>
+        <h4 class="card-title">{{ item.name }}</h4>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><small class="text-muted"><strong>Tipus: </strong>12cm</small></li>
-          <li class="list-group-item"><small class="text-muted"><strong>Színek: </strong>fehér,terracotta</small></li>
-          <li class="list-group-item"><small class="text-muted"><strong>Cikkszám: </strong>500014</small></li>
+          <li class="list-group-item"><small class="text-muted"><strong>Tipus: </strong>{{ item.type }}</small></li>
+          <li class="list-group-item"><small class="text-muted"><strong>Színek: </strong>{{ item.color }}</small></li>
+          <li class="list-group-item"><small class="text-muted"><strong>Cikkszám: </strong>{{ item.product_id }}</small></li>
         </ul>
       </div>
     </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
+
+
+
 
 
 

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import {NgFor, NgForOf} from '@angular/common';
 import {NgxMaskDirective} from "ngx-mask";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {SearchCatalogItemService} from "../../service/search-catalog-item.service";
 import {CatalogItemComponent} from "../../component/catalog-item/catalog-item.component";
+import {empty} from "rxjs";
 
 @Component({
   selector: 'app-search',
@@ -11,7 +13,8 @@ import {CatalogItemComponent} from "../../component/catalog-item/catalog-item.co
   imports: [
     NgxMaskDirective,
     ReactiveFormsModule,
-    CatalogItemComponent
+    CatalogItemComponent,
+    NgForOf
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
@@ -25,6 +28,22 @@ export class SearchComponent {
 
 
   http!: HttpClient;
+  itemList: any;
+
+
+  category: string = "cserép";
+
+  name: string = "garda";
+
+  type: string = "4l";
+
+  color: string = "red";
+
+  product_id: string = "01234";
+
+  img: string = "mappa/cserep.jpg"
+
+  item: any;
 
 
 
@@ -54,29 +73,33 @@ export class SearchComponent {
     if (this.searchForm.valid) {
       this.searchCatalogItemService.sendData(this.searchForm.value).subscribe(
         (response) => {
-          console.log('POST response:', response);
-        },
+
+          this.itemList = response
+
+          console.log('POST response:', this.itemList);
+
+
+          },
         (error) => {
           console.error('POST error:', error);
         }
       );
 
 
-    } else {
+    }
+
+    else {
       console.error('Form is invalid');
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+/* for(const object of response){
+
+
+   <app-catalog-item [category]=object.category></app-catalog-item>
+*/

@@ -35,14 +35,38 @@
 
 
   <div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="search_results">
 
-      <app-catalog-item></app-catalog-item>
+
+      <app-catalog-item *ngFor="let item of itemList"
+
+        [item]="item">
+
+      </app-catalog-item>
+
 
     </div>
-  </div>
+
 
 
 
 </form>
 
+
+<!--        *ngFor="let item of this.itemList"-->
+
+<!--[category]=item.category
+
+[name]=item.name
+
+[type]=item.type
+
+[color]=item.color
+
+[product_id]=item.product_id
+
+[img]=item.img-->
+
+
+<!--<app-catalog-item [category]="category" [name]=name [type]=type [color]=color [product_id]="product_id" [img]=img>
+
+     </app-catalog-item>-->
