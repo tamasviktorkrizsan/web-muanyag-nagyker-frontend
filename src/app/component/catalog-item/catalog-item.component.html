@@ -1,18 +1,18 @@
 
-<div class="col-sm-12 col-md-3 col-lg-3 col-xl-3" id="search_results">
+
   <div class="card border-success mb-3">
-      <div class="card-header"> {{ item.category }} </div>
-      <img class="card-img-top item-img" src="{{ item.img }}" width="250" height="180" alt="Card image cap" >
+      <div class="card-header"> {{ category }} </div>
+      <img class="card-img-top item-img" src="{{ img }}" width="250" height="180" alt="Card image cap" >
       <div class="card-body">
-        <h4 class="card-title">{{ item.name }}</h4>
+        <h5 class="card-title">{{ name }}</h5>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><small class="text-muted"><strong>Tipus: </strong>{{ item.type }}</small></li>
-          <li class="list-group-item"><small class="text-muted"><strong>Színek: </strong>{{ item.color }}</small></li>
-          <li class="list-group-item"><small class="text-muted"><strong>Cikkszám: </strong>{{ item.product_id }}</small></li>
+          <li class="list-group-item"><small class="text-muted"><strong>Tipus: </strong>{{ type }}</small></li>
+          <li class="list-group-item"><small class="text-muted"><strong>Színek: </strong>{{ color }}</small></li>
+          <li class="list-group-item"><small class="text-muted"><strong>Cikkszám: </strong>{{ product_id }}</small></li>
         </ul>
       </div>
     </div>
-</div>
+
 
 
 

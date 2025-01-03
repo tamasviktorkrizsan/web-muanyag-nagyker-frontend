@@ -1,0 +1,51 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+{{ url_search }} {{this.searchForm.value}}
+      <label for="search"><span class="warning-sign">*</span>Keresés:</label>
+      <input type="text" class="form-control" id="search" name="submit_search"
+             data-toggle="tooltip" data-placement="top" value="" placeholder="terméknév vagy cikkszám" formControlName="search">
+      <span class="warning-sign"><!--<?php echo $nameError;?>--></span>
+      <br>
+
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+      <button type="submit" [disabled]="searchForm.invalid">Keresés</button>
+    </div>
+
+  </div>
+
+</form>
+
+<!--  <div class="flex-row d-flex flex-wrap"> -->
+
+<div class="row">
+  <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" *ngFor="let item of itemList; index as i">
+
+
+    <div class="clearfix" *ngIf="i % 3 == 0"></div>
+
+    <app-catalog-item
+
+      [category]= "item.category"
+
+      [img]= "item.img"
+
+      [name]="item.name"
+
+      [type]="item.type"
+
+      [color]="item.color"
+
+      [product_id]="item.product_id"
+
+    >
+    </app-catalog-item>
+
+
+
+
+  </div>
+</div>
+

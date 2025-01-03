@@ -1,4 +1,8 @@
+<div id="background" class="bg-image">
+
 <div class="container">
+
+
 
   <!--<header>
     <app-header></app-header>
@@ -58,30 +62,42 @@
             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleGardenSubmenu()">Kertészeti áruk</a>
             <ul id="homeSubmenu" [ngClass]="isGardenSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'">
               <li>
-                <a href="">virágcserepek</a>
+                <a href="/search/virágcserepek" routerLink="/search/virágcserepek" routerLinkActive="active">
+                  virágcserepek
+                </a>
               </li>
 
 
               <li>
-                <a href="">temetői vázák és betétek</a>
+                <a href="/search/temetői vázák" routerLink="/search/temetői vázák" routerLinkActive="active">
+                  temetői vázák
+                </a>
               </li>
 
 
 
               <li>
-                <a href="">ládák, dézsák, vödrök</a>
+                <a href="/search/ládák és vödrök" routerLink="/search/ládák és vödrök" routerLinkActive="active">
+                  ládák, dézsák, vödrök
+                </a>
               </li>
 
               <li>
-                <a href="">hordók és demizsonok</a>
+                <a href="/search/hordók" routerLink="/search/hordók" routerLinkActive="active">
+                hordók és demizsonok
+                </a>
               </li>
 
               <li>
-                <a href="">locsolók és kannák</a>
+                <a href="/search/kannák" routerLink="/search/kannák" routerLinkActive="active">
+                kannák
+                </a>
               </li>
 
               <li>
-                <a href="">seprűk, partvisok, hólapát</a>
+                <a href="/search/seprűk" routerLink="/search/seprűk" routerLinkActive="active">
+                  seprűk, partvisok, hólapát
+                </a>
               </li>
 
 
@@ -92,11 +108,15 @@
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleHouseholdSubmenu()">Háztartási áruk</a>
             <ul [ngClass]="isHouseholdSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'" id="pageSubmenu">
               <li>
-                <a href="#">szemetesek és szennyestartók</a>
+                <a href="/search/szemetesek" routerLink="/search/szemetesek" routerLinkActive="active">
+                  szemetesek
+                </a>
               </li>
 
               <li>
-                <a href="#">edény és evőeszköz szárítók, evőeszköztartók</a>
+                <a href="/search" routerLink="/search/evőeszköztartók" routerLinkActive="active">
+                  evőeszköztartók
+                </a>
               </li>
 
 
@@ -224,4 +244,6 @@
     </footer>-->
 
   </main>
+</div>
+
 </div>
