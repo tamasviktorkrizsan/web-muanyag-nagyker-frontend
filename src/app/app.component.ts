@@ -32,9 +32,9 @@ export class AppComponent {
 
   isSidebarOpen = true;
 
-  isGardenSubmenuOpen = false;
+  isGardenSubmenuOpen = true;
 
-  isHouseholdSubmenuOpen = false;
+  isHouseholdSubmenuOpen = true;
 
 
 

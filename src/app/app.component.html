@@ -48,9 +48,9 @@
           <li>
             <a href="/welcome" routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page">Rólunk</a>
           </li>
-          <li>
+         <!-- <li>
             <a href="/services" routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Szolgáltatásaink</a>
-          </li>
+          </li>-->
           <li>
             <a href="/contact" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Kapcsolat</a>
           </li>
@@ -59,7 +59,7 @@
 
 
           <li class="active">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleGardenSubmenu()">Kertészeti áruk</a>
+            <a href="" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleGardenSubmenu()">Kertészeti áruk</a>
             <ul id="homeSubmenu" [ngClass]="isGardenSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'">
               <li>
                 <a href="/search/virágcserepek" routerLink="/search/virágcserepek" routerLinkActive="active">
@@ -105,7 +105,7 @@
           </li>
 
           <li>
-            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleHouseholdSubmenu()">Háztartási áruk</a>
+            <a href="" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleHouseholdSubmenu()">Háztartási áruk</a>
             <ul [ngClass]="isHouseholdSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'" id="pageSubmenu">
               <li>
                 <a href="/search/szemetesek" routerLink="/search/szemetesek" routerLinkActive="active">
@@ -140,21 +140,7 @@
 
         </ul>
 
-        <ul class="list-unstyled CTAs">
 
-<li>Web by Tamás Krizsán 2020</li>
-
-<!--
-          <li>
-              <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-            </li>
-            <li>
-              <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-            </li>-->
-
-
-
-        </ul>
 
 
 
@@ -230,7 +216,7 @@
 
 
 
-
+          <br>
       </div>
 
 
@@ -238,16 +224,24 @@
 
     </div>
     </div>
-
-
-
-
-
-  <!--  <footer class="footer text-center">
-      <app-footer></app-footer>
-    </footer>-->
-
   </main>
-</div>
 
 </div>
+
+
+        <footer class=" footer text-center text-muted">
+
+          <div id="container">
+            <br>
+            Matejka Műanyagárú Nagykereskedelem &copy; 1992-2025 |
+            2161 Csomád Templom utca 15. (<a class="text-reset" href="https://goo.gl/maps/jTf8U9u7bN1u2a5s5" target="_blank">Google Maps</a>) |
+            matejka.nagyker&#64;gmail.com <br> <a class="text-decoration-none text-reset" href="/impressum">Cégadatok/Impresszum</a> |
+            <a class="text-decoration-none text-reset" href="#">Adatvédelmi tájékozató</a>
+            <br>
+            <a class="text-decoration-none text-reset" href="#">Web by Tamás Krizsán</a>
+
+          </div>
+        </footer>
+
+    </div>
+

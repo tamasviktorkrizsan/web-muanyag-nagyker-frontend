@@ -1,9 +1,9 @@
 import {Component, Injectable} from '@angular/core';
 import {ReactiveFormsModule, FormBuilder, Validators, FormGroup} from "@angular/forms";
-import {MailFormService} from "../../service/mail-form.service";
 import {NgxMaskDirective} from 'ngx-mask';
 import {HttpClient} from "@angular/common/http";
-
+import {Router} from "@angular/router";
+import {MailFormService} from "../../service/mail-form.service";
 
 @Component({
   selector: 'app-contact-form',
@@ -17,37 +17,27 @@ import {HttpClient} from "@angular/common/http";
   styleUrl: './contact-form.component.scss'
 })
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContactFormComponent {
 
-
-  // localhost/github/project/a-web-muanyag-nagyker-backend/backend/service/mail/api.php
-
    contactForm!: FormGroup;
-
-
-
    http!: HttpClient;
 
-
-
-
-    constructor(private formBuilder: FormBuilder,  private mailFormService: MailFormService) {
-
-
-
+    constructor(private formBuilder: FormBuilder,
+                private mailFormService: MailFormService,
+                private router: Router
+    ) {
 
       this.contactForm = this.formBuilder.group({
         name: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         phone: ['', Validators.required],
-        taxId: ['', [Validators.required, Validators.minLength(6)]],
-          message: ['', [Validators.required, Validators.minLength(6)]]
+        taxId: ['', [Validators.required, Validators.minLength(11)]],
+        message: ['', [Validators.required, Validators.minLength(6)]],
+        userConsent: [false, Validators.requiredTrue]
 
       });
     }
@@ -55,33 +45,26 @@ export class ContactFormComponent {
 
     onSubmit() {
 
-   /* if (this.contactForm.valid) {
-
-      console.log(this.contactForm.value);
-      this.http.post(this.formUrl,this.contactForm.value).subscribe((res) => {
-                console.log(res);
-              });
-      }*/
-
-
       if (this.contactForm.valid) {
         this.mailFormService.sendData(this.contactForm.value).subscribe(
           (response) => {
             console.log('POST response:', response);
+
+            alert("Az üzenetet sikeresen elküldtük! Hamarosan felvesszük a kapcsolatot önnel");
+
+            this.router.navigate(['/welcome'])
+
           },
           (error) => {
             console.error('POST error:', error);
+
+            alert("Az üzenetet nem sikerült elküldeni. Kérjük probálja meg később!");
+
           }
         );
       } else {
-        console.error('Form is invalid');
+        console.error('Kérjük hogy ellenörizze az űrlapon megadott adatok helyességét');
       }
     }
-
-
-
-
-
-
 
 }

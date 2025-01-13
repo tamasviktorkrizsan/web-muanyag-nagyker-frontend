@@ -11,7 +11,7 @@ export class SearchCatalogItemService {
 
   // http://localhost/github/project/a-web-muanyag-nagyker-backend/backend/service/catalog/api.php
 
-  private apiUrl: string = "http://localhost:3000/status";
+  private apiUrl: string = "http://localhost:3000/catalog";
 
   constructor(private http: HttpClient) { }
 

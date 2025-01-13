@@ -1,23 +1,23 @@
 <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
 
   <div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
-{{ url_search }} {{this.searchForm.value}}
-      <label for="search"><span class="warning-sign">*</span>Keresés:</label>
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-12">
+      <label for="search">Keresés:</label>
       <input type="text" class="form-control" id="search" name="submit_search"
-             data-toggle="tooltip" data-placement="top" value="" placeholder="terméknév vagy cikkszám" formControlName="search">
+             data-toggle="tooltip" data-placement="top" value="" placeholder="terméknév, cikkszám vagy kategória" formControlName="search">
       <span class="warning-sign"><!--<?php echo $nameError;?>--></span>
       <br>
 
     </div>
-    <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <button type="submit" [disabled]="searchForm.invalid">Keresés</button>
+
     </div>
 
   </div>
 
 </form>
-
+<br>
 <!--  <div class="flex-row d-flex flex-wrap"> -->
 
 <div class="row">

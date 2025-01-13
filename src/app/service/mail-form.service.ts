@@ -12,7 +12,7 @@ export class MailFormService {
   // localhost/github/project/a-web-muanyag-nagyker-backend/backend/service/mail/api.php
 
 
-  private apiUrl: string = "http://storagereq.krizsanmunka.hu/backend/api.php";
+  private apiUrl: string = "http://localhost:3000/mail";
 
   constructor(private http: HttpClient) { }
 

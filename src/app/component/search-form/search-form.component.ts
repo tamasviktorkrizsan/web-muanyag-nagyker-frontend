@@ -6,7 +6,6 @@ import {HttpClient} from "@angular/common/http";
 import {SearchCatalogItemService} from "../../service/search-catalog-item.service";
 import {CatalogItemComponent} from "../catalog-item/catalog-item.component";
 import { ActivatedRoute } from '@angular/router';
-import {empty} from "rxjs";
 @Component({
   selector: 'app-search-form',
   standalone: true,
