@@ -2,32 +2,19 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
+
+
+
+
+main {
+
+  background-color: rgb(255, 255, 255);opacity:100%;
+
 }
-
-p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.7em;
-  color: #999;
-}
-
-a,
-a:hover,
-a:focus {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-
-
 
 
 .navbar {
+  height: 100px;
   padding: 15px 10px;
   background: #fff;
   border: none;
@@ -148,12 +135,45 @@ a.article:hover {
 
 .menu-button {
 position: absolute;
+  top: 30px;
   right: 10px;
   color: white;
   background-color: #60c700;
 }
 
 
+.footer {
+
+  background-color: black;
+  height: 100px;
+  /*position: absolute;*/
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+
+}
+
+
+
+
+#background {
+
+  width: 100%;
+  /*height: 100vh;*/
+  display: flex;
+  flex-direction: column;
+
+  background-repeat: no-repeat;
+  background-position:center;
+  background-attachment: fixed;
+  /*align-items: center;
+  justify-content: center;*/
+  //gap: 50px;
+
+  /*justify-content: flex-end;*/
+  background-image:url("../public/assets/img/layout/bg.jpg");
+
+}
 
 
 
@@ -173,7 +193,56 @@ position: absolute;
     MEDIAQUERIES
 ----------------------------------------------------- */
 
-@media (max-width: 768px) {
+#logo {
+  display: block !important;
+
+}
+
+
+
+
+/* xl	≥1200px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+  #main-page {
+
+    min-width: 70%;
+    max-width: 80%;
+    z-index: 2;
+  }
+
+}
+
+/* lg */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+  #main-page {
+
+    min-width: 100%;
+    padding: 0;
+    z-index: 2;
+  }
+}
+
+
+
+/* md */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  #main-page {
+
+    min-width: 100%;
+    padding: 0;
+    z-index: 2;
+  }
+}
+
+
+
+/* sm */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+  /*
   #sidebar {
     margin-left: -250px;
   }
@@ -181,19 +250,23 @@ position: absolute;
     margin-left: 0;
   }
   .sidebarCollapse span {
-    display: none;
+    display: nvone;
   }
-}
+  */
+
+  #main-page {
+
+    min-width: 100%;
+    padding: 0;
+    z-index: 1;
+  }
 
 
+  #sidebar {
 
-.footer {
+    z-index: 2;
 
-  background-color: black;
-  height: 100px;
-  /*position: absolute;*/
-  bottom: 0;
-  width: 100%;
-  font-size: 12px;
+  }
+
 
 }

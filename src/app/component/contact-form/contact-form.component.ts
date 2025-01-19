@@ -21,6 +21,8 @@ import {MailFormService} from "../../service/mail-form.service";
   providedIn: 'root'
 })
 
+// TODO: implement recaptcha-t
+
 export class ContactFormComponent {
 
    contactForm!: FormGroup;

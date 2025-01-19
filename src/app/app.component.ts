@@ -1,4 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {RouterOutlet, RouterLink, RouterLinkActive,} from '@angular/router';
 // import * as $ from 'jquery';
@@ -15,8 +16,22 @@ import {SidebarComponent} from "./layout/sidebar/sidebar.component";
   styleUrl: './app.component.scss'
 })
 
+// https://stackoverflow.com/questions/45350716/detecting-real-time-window-size-changes-in-angular-4
+
+
 export class AppComponent {
 
+/*
+  public windowWidth: any;
+
+  ngOnInit() {
+    this.windowWidth = window.innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.windowWidth = window.innerWidth;
+  }*/
 
   triggerStatus = false;
 
@@ -52,7 +67,27 @@ export class AppComponent {
   }
 
 
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+  ) {
+    // detect screen size changes
+    this.breakpointObserver.observe([
+      "(max-width: 768px)"
+    ]).subscribe((result: BreakpointState) => {
+      if (result.matches) {
+        // hide stuff
 
+        this.isSidebarOpen = false;
+
+      } else {
+        // show stuff
+
+        this.isSidebarOpen = true;
+
+
+      }
+    });
+  }
 
 
 

@@ -1,28 +1,31 @@
-#background {
-
-  width: 100%;
-  /*height: 100vh;*/
-  display: flex;
-  flex-direction: column;
-
-  background-repeat: no-repeat;
-  background-position:center;
-  background-attachment: fixed;
-  align-items: center;
-  justify-content: center;
-  //gap: 50px;
-
-  /*justify-content: flex-end;*/
-  background-image:url("public/assets/img/layout/bg.jpg");
 
 
 
+
+
+
+
+
+
+body {
+  min-width: 576px;
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
 }
 
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #999;
+}
 
-main {
-
-  background-color: rgb(255, 255, 255);opacity:95%;
-
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
