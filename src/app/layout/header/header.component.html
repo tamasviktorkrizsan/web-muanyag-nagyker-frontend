@@ -1,1 +1,31 @@
-<p>header works!</p>
+<nav id="vertical-navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <a class="navbar-brand" href="#">
+    <img id="logo" [ngSrc]="'/public/assets/img/layout/logo.png'" width="311" height="80" alt="" border="0" priority="">
+  </a>
+  <ul id="desktop-vertical-menu" class="navbar-nav me-auto mb-2 mb-lg-0">
+
+    <li class="nav-item" id="menu-search">
+      <app-search-box></app-search-box>
+    </li>
+
+    <!--
+                    <li class="nav-item">
+                      <a href="/search" routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page">Termékkereső</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="/welcome" routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page">Rólunk</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="/contact" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Kapcsolat</a>
+                    </li>-->
+
+
+
+  </ul>
+
+ <!-- <button type="button" id="menu-button" class="btn btn-info" (click)="toggleSidebar()">
+    <i class="fas fa-align-left"></i>
+    <span><i class="bi bi-list"></i></span>
+  </button>-->
+</nav>

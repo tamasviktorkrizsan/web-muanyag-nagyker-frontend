@@ -1,31 +1,22 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
-import {NgxMaskDirective} from "ngx-mask";
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {SearchCatalogItemService} from "../../service/search-catalog-item.service";
-import {CatalogItemComponent} from "../catalog-item/catalog-item.component";
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute} from "@angular/router";
+import {Router} from "@angular/router";
+import {Location} from '@angular/common';
+
 @Component({
-  selector: 'app-search-form',
+  selector: 'app-search-box',
   standalone: true,
-  imports: [
-    NgxMaskDirective,
-    ReactiveFormsModule,
-    CatalogItemComponent,
-    NgForOf,
-    NgIf
-  ],
-  templateUrl: './search-form.component.html',
-  styleUrl: './search-form.component.scss'
+    imports: [
+        FormsModule,
+        ReactiveFormsModule
+    ],
+  templateUrl: './search-box.component.html',
+  styleUrl: './search-box.component.scss'
 })
-export class SearchFormComponent implements OnInit {
-
-
-
-
-
-
+export class SearchBoxComponent implements OnInit {
 
   searchForm!: FormGroup;
 
@@ -51,14 +42,56 @@ export class SearchFormComponent implements OnInit {
   }
 
 
+
   constructor(private formBuilder: FormBuilder,
               private searchCatalogItemService: SearchCatalogItemService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private routs: Router,
+              private previousPage: Location) {
 
     this.searchForm = this.formBuilder.group({
       search: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
+
+
+  currentPage!: string;
+
+  clickIntoTheBox() {
+
+    this.currentPage = this.routs.url;
+
+    console.log(this.currentPage);
+
+  }
+
+
+  type(event:any) {
+
+
+    if (event.target.value.length > 0)
+    {
+
+
+      this.routs.navigate(['/search', event.target.value]);
+    }
+
+    else {
+      console.log(document.head.baseURI)
+
+      this.routs.navigate([this.currentPage])
+
+
+    }
+
+    console.log(event.target.value);
+
+
+
+  }
+
+
+  // @ViewChild('search') search: NgForm;
 
 
   ngOnInit(): void {
@@ -78,7 +111,7 @@ export class SearchFormComponent implements OnInit {
 
 
 
-  onSubmit(){
+  onSubmit() {
 
     if (this.searchForm.valid) {
       this.searchCatalogItemService.sendData(this.searchForm.value).subscribe(
@@ -101,29 +134,14 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
+
+
+
+
+
+
+
+
+
+
 }
-
-
-
-
-/* for(const object of response){
-
-
-   <app-catalog-item [category]=object.category></app-catalog-item>
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

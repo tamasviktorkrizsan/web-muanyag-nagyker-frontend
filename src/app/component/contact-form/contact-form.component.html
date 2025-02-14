@@ -105,9 +105,11 @@
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
-      <input type="checkbox" id="check_pp" name="submit_pp" value="Megadva" formControlName="userConsent">
+      <input type="checkbox" id="checkbox_user_consent" name="submit_user_consent" value="Megadva" formControlName="userConsent">
 
-      <label for="check_pp">Elolvastam és elfogadtam az <a href="#" target="_blank">Adatkezelési Tájékoztatót*</a></label>
+      <label class="form-check-label" for="checkbox_user_consent">
+         Elolvastam és elfogadtam az <a href="#" class="link-primary" target="_blank">Adatkezelési Tájékoztatót*</a>
+      </label>
       <br><span class="warning-sign"><!--<?php echo $error_pp;?>--></span>
 
       <br>

@@ -1,0 +1,45 @@
+#desktop-vertical-menu {
+
+  margin-left: 30%;
+
+}
+
+
+.navbar {
+  height: 100px;
+  padding: 15px 10px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+
+#menu-search {
+
+  float: right;
+
+}
+
+
+#logo {
+  display: block !important;
+
+}
+
+
+#menu-button {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  color: white;
+  background-color: #60c700;
+  display: none;
+}

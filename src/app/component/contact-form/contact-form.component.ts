@@ -4,6 +4,9 @@ import {NgxMaskDirective} from 'ngx-mask';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {MailFormService} from "../../service/mail-form.service";
+// import {RecaptchaModule, RecaptchaFormsModule, RecaptchaV3Module} from "ng-recaptcha";
+
+// TODO: add recaptcha when this app runs from a webhost.
 
 @Component({
   selector: 'app-contact-form',
@@ -11,7 +14,6 @@ import {MailFormService} from "../../service/mail-form.service";
   imports: [
     ReactiveFormsModule,
     NgxMaskDirective
-
   ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
@@ -20,8 +22,6 @@ import {MailFormService} from "../../service/mail-form.service";
 @Injectable({
   providedIn: 'root'
 })
-
-// TODO: implement recaptcha-t
 
 export class ContactFormComponent {
 

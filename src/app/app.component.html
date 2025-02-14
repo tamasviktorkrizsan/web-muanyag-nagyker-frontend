@@ -4,185 +4,17 @@
 
 
 
-  <!--<header>
-    <app-header></app-header>
-  </header>-->
-
   <main>
-    <!--<div class = "content content-top">
-      <router-outlet></router-outlet>
-
-    </div>-->
 
 
     <div class="wrapper">
       <!-- Sidebar  -->
 
+      <app-sidebar></app-sidebar>
 
-      <nav id="sidebar" *ngIf="isSidebarOpen">
-        <div class="sidebar-header" (click)="toggleSidebar()">
-
-
-
-            <h4>
-
-              <i class="bi bi-list"></i>
-
-            Menü
-
-          </h4>
-
-
-
-          <hr>
-
-          <!--<img src="assets/img/layout/logo.png" width="311" height="80" alt="" border="0">-->
-
-        </div>
-
-        <ul class="list-unstyled components active">
-
-          <li>
-            <a href="/search" routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page">Termékkereső</a>
-          </li>
-          <li>
-            <a href="/welcome" routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page">Rólunk</a>
-          </li>
-         <!-- <li>
-            <a href="/services" routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Szolgáltatásaink</a>
-          </li>-->
-          <li>
-            <a href="/contact" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Kapcsolat</a>
-          </li>
-
-
-
-
-          <li class="active">
-            <a href="" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleGardenSubmenu()">Kertészeti áruk</a>
-            <ul id="homeSubmenu" [ngClass]="isGardenSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'">
-              <li>
-                <a href="/search/virágcserepek" routerLink="/search/virágcserepek" routerLinkActive="active">
-                  virágcserepek
-                </a>
-              </li>
-
-
-              <li>
-                <a href="/search/temetői vázák" routerLink="/search/temetői vázák" routerLinkActive="active">
-                  temetői vázák
-                </a>
-              </li>
-
-
-
-              <li>
-                <a href="/search/ládák és vödrök" routerLink="/search/ládák és vödrök" routerLinkActive="active">
-                  ládák, dézsák, vödrök
-                </a>
-              </li>
-
-              <li>
-                <a href="/search/hordók" routerLink="/search/hordók" routerLinkActive="active">
-                hordók és demizsonok
-                </a>
-              </li>
-
-              <li>
-                <a href="/search/kannák" routerLink="/search/kannák" routerLinkActive="active">
-                kannák
-                </a>
-              </li>
-
-              <li>
-                <a href="/search/seprűk" routerLink="/search/seprűk" routerLinkActive="active">
-                  seprűk, partvisok, hólapát
-                </a>
-              </li>
-
-
-            </ul>
-          </li>
-
-          <li>
-            <a href="" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleHouseholdSubmenu()">Háztartási áruk</a>
-            <ul [ngClass]="isHouseholdSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'" id="pageSubmenu">
-              <li>
-                <a href="/search/szemetesek" routerLink="/search/szemetesek" routerLinkActive="active">
-                  szemetesek
-                </a>
-              </li>
-
-              <li>
-                <a href="/search" routerLink="/search/evőeszköztartók" routerLinkActive="active">
-                  evőeszköztartók
-                </a>
-              </li>
-
-
-
-              <li>
-                <a href="/search" routerLink="/search/tálak" routerLinkActive="active">
-                  tálak
-                </a>
-              </li>
-
-
-
-              <li>
-                <a href="/search" routerLink="/search/szivacsok" routerLinkActive="active">
-                  szivacsok
-                </a>
-              </li>
-
-            </ul>
-          </li>
-
-        </ul>
-
-
-
-
-
-      </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- Page Content  -->
       <div id="content">
+        <app-header></app-header>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-
-
-            <div id="navbarSupportedContent">
-              <img id="logo" [ngSrc]="'/public/assets/img/layout/logo.png'" width="311" height="80" alt="" border="0" priority="">
-
-
-              <button type="button" id="sidebarCollapse" class="btn btn-info menu-button" (click)="toggleSidebar()">
-                <i class="fas fa-align-left"></i>
-                <span><i class="bi bi-list"></i></span>
-              </button>
-            </div>
-
-        </nav>
         <div class="container">
         <router-outlet></router-outlet>
 
@@ -201,24 +33,13 @@
 
     </div>
     </div>
+
   </main>
 
 </div>
 
 
-        <footer class=" footer text-center text-muted">
-
-          <div id="container">
-            <br>
-            Matejka Műanyagárú Nagykereskedelem &copy; 1992-2025 |
-            2161 Csomád Templom utca 15. (<a class="text-reset" href="https://goo.gl/maps/jTf8U9u7bN1u2a5s5" target="_blank">Google Maps</a>) |
-            matejka.nagyker&#64;gmail.com <br> <a class="text-decoration-none text-reset" href="/impressum">Cégadatok/Impresszum</a> |
-            <a class="text-decoration-none text-reset" href="#">Adatvédelmi tájékozató</a>
-            <br>
-            <a class="text-decoration-none text-reset" href="#">Web by Tamás Krizsán</a>
-
-          </div>
-        </footer>
+        <app-footer></app-footer>
 
     </div>
 
