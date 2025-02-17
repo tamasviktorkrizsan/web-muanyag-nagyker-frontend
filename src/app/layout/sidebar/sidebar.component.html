@@ -1,46 +1,39 @@
 <nav id="sidebar" *ngIf="isSidebarOpen">
-  <div class="sidebar-header" (click)="toggleSidebar()">
-
-
-
+  <div class="sidebar-header" >
     <h4>
-
-      <!--              <i class="bi bi-list"></i>-->
-
       Menü
-
-      <i id="close-button" class="bi bi-x-lg"></i>
-
+      <i id="close-button" class="bi bi-x-lg" (click)="toggleSidebar()"></i>
     </h4>
-
-
-
     <hr>
 
-    <!--<img src="assets/img/layout/logo.png" width="311" height="80" alt="" border="0">-->
-
+  </div>
+  <div class="sidebar-header" >
+    <app-search-box></app-search-box>
   </div>
 
-  <ul class="list-unstyled components active">
+<br>
 
-    <li>
+  <ul id="sidebar-menu" class="list-unstyled components active">
+
+    <!--<li>
+      <app-search-box></app-search-box>
+    </li>-->
+
+    <!--<li>
       <a href="/search" routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page">Termékkereső</a>
-    </li>
+    </li>-->
     <li>
       <a href="/welcome" routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page">Rólunk</a>
     </li>
-    <!-- <li>
-       <a href="/services" routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Szolgáltatásaink</a>
-     </li>-->
     <li>
-      <a href="/contact" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Kapcsolat</a>
+       <a href="/services" routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Szolgáltatásaink</a>
     </li>
-    <br>
-
-
-
-    <li class="active">
-      <a href="" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleGardenSubmenu()">Kertészeti áruk</a>
+    <li>
+      <a href="/contact" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Elérhetőségeink</a>
+    </li>
+<br>
+    <li>
+      <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleGardenSubmenu()">Kertészeti áruk</a>
       <ul id="homeSubmenu" [ngClass]="isGardenSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'">
         <li>
           <a href="/search/virágcserepek" routerLink="/search/virágcserepek" routerLinkActive="active">
@@ -83,11 +76,11 @@
 
 
       </ul>
-      <br>
+
     </li>
 
     <li>
-      <a href="" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleHouseholdSubmenu()">Háztartási áruk</a>
+      <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleHouseholdSubmenu()">Háztartási áruk</a>
       <ul [ngClass]="isHouseholdSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'" id="pageSubmenu">
         <li>
           <a href="/search/szemetesek" routerLink="/search/szemetesek" routerLinkActive="active">
@@ -121,5 +114,6 @@
     </li>
 
   </ul>
+
 
 </nav>

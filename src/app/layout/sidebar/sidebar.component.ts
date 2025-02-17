@@ -3,6 +3,7 @@ import {NgClass, NgIf} from "@angular/common";
 import {AppComponent} from "../../app.component";
 import {BreakpointObserver, BreakpointState} from "@angular/cdk/layout";
 import {RouterLink, RouterLinkActive} from "@angular/router";
+import {SearchBoxComponent} from "../../component/search-box/search-box.component";
 
 @Component({
   selector: 'app-sidebar',
@@ -11,7 +12,8 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
     NgIf,
     NgClass,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    SearchBoxComponent
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'

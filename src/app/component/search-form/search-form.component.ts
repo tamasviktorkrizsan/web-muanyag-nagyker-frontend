@@ -22,11 +22,6 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchFormComponent implements OnInit {
 
 
-
-
-
-
-
   searchForm!: FormGroup;
 
   http!: HttpClient;
@@ -76,6 +71,7 @@ export class SearchFormComponent implements OnInit {
   }
 
 
+  displayNoResult = true;
 
 
   onSubmit(){
@@ -87,6 +83,9 @@ export class SearchFormComponent implements OnInit {
           this.itemList = response
 
           console.log('POST response:', this.itemList);
+
+
+          this.displayNoResult = this.itemList.length == 0;
         },
         (error) => {
           console.error('POST error:', error);
