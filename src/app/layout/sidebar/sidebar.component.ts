@@ -1,9 +1,10 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, inject, Inject, OnInit} from '@angular/core';
 import {NgClass, NgIf} from "@angular/common";
 import {AppComponent} from "../../app.component";
 import {BreakpointObserver, BreakpointState} from "@angular/cdk/layout";
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {SearchBoxComponent} from "../../component/search-box/search-box.component";
+import {CommonService} from "../../service/common.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -18,10 +19,19 @@ import {SearchBoxComponent} from "../../component/search-box/search-box.componen
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
 
+  private commonService: CommonService = inject(CommonService);
 
+  message: string = "default message"
 
+  ngOnInit() {
+    this.commonService.sidebarToggleClickEvent
+      .subscribe(() => {
+
+        this.toggleSidebar()
+      });
+  }
 
   isSidebarOpen = true;
 
@@ -29,12 +39,9 @@ export class SidebarComponent {
 
   isHouseholdSubmenuOpen = true;
 
-
-
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
-
 
   toggleGardenSubmenu() {
     this.isGardenSubmenuOpen = !this.isGardenSubmenuOpen;
@@ -45,15 +52,6 @@ export class SidebarComponent {
   }
 
 
-
-
-
-
-
-
-
-
-
   constructor(
     private breakpointObserver: BreakpointObserver,
   ) {
@@ -62,16 +60,11 @@ export class SidebarComponent {
       "(max-width: 768px)"
     ]).subscribe((result: BreakpointState) => {
       if (result.matches) {
-        // hide stuff
-
         this.isSidebarOpen = false;
+      }
 
-      } else {
-        // show stuff
-
+      else {
         this.isSidebarOpen = true;
-
-
       }
     });
   }

@@ -1,31 +1,37 @@
+
 <nav id="vertical-navbar" class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <a class="navbar-brand" href="#">
-    <img id="logo" [ngSrc]="'/public/assets/img/layout/logo.png'" width="311" height="80" alt="" border="0" priority="">
+
+  <a class="navbar-brand align-middle" routerLink="/welcome">
+    <img id="logo" class="" [ngSrc]="'/public/assets/img/layout/logo.png'" width="311" height="80" alt="" border="0" priority="">
   </a>
-  <ul id="desktop-vertical-menu" class="navbar-nav me-auto mb-2 mb-lg-0">
 
-    <li class="nav-item" id="menu-search">
+<span id="header-search">
       <app-search-box></app-search-box>
-    </li>
+</span>
 
-    <!--
-                    <li class="nav-item">
-                      <a href="/search" routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page">Termékkereső</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="/welcome" routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page">Rólunk</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="/contact" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Kapcsolat</a>
-                    </li>-->
+   <button type="button" id="horizontal-menu-button" class="btn btn-info" (click)="onClick()">
+     <i class="fas fa-align-left"></i>
+     <span>
+      <i class="bi bi-list"></i>
+    </span>
+   </button>
 
 
 
-  </ul>
 
- <!-- <button type="button" id="menu-button" class="btn btn-info" (click)="toggleSidebar()">
-    <i class="fas fa-align-left"></i>
-    <span><i class="bi bi-list"></i></span>
-  </button>-->
+  <!--
+
+https://stackoverflow.com/questions/52413873/angular-invoking-a-function-in-one-component-with-events-on-another-component
+
+
+
+-->
+
+
+
+
+
+
+
 </nav>

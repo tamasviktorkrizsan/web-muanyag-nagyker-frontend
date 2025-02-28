@@ -2,6 +2,10 @@ import {Component, ElementRef, HostListener, Input, OnInit} from '@angular/core'
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {RouterOutlet, RouterLink, RouterLinkActive, ActivatedRoute,} from '@angular/router';
+
+import { Injectable, EventEmitter, Output } from '@angular/core';
+
+
 // import * as $ from 'jquery';
 import {HeaderComponent} from "./layout/header/header.component";
 import {FooterComponent} from "./layout/footer/footer.component";
@@ -23,8 +27,6 @@ import {SearchBoxComponent} from "./component/search-box/search-box.component";
 
 
 export class AppComponent {
-
-
 
 
 

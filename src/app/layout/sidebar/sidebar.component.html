@@ -2,118 +2,85 @@
   <div class="sidebar-header" >
     <h4>
       Menü
-      <i id="close-button" class="bi bi-x-lg" (click)="toggleSidebar()"></i>
+      <i id="close-button" class="bi bi-x-lg" (click)="toggleSidebar()">
+      </i>
     </h4>
     <hr>
-
   </div>
-  <div class="sidebar-header" >
+  <div id="sidebar-search-box" class="sidebar-header">
     <app-search-box></app-search-box>
   </div>
-
-<br>
-
-  <ul id="sidebar-menu" class="list-unstyled components active">
-
-    <!--<li>
-      <app-search-box></app-search-box>
-    </li>-->
-
-    <!--<li>
-      <a href="/search" routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page">Termékkereső</a>
-    </li>-->
+  <br>
+  <ul id="sidebar-menu" class="list-unstyled">
     <li>
-      <a href="/welcome" routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page">Rólunk</a>
+      <a routerLink="/welcome">Rólunk</a>
     </li>
     <li>
-       <a href="/services" routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Szolgáltatásaink</a>
+      <a routerLink="/services">Szolgáltatásaink</a>
     </li>
     <li>
-      <a href="/contact" routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Elérhetőségeink</a>
+      <a routerLink="/contact">Elérhetőségeink</a>
     </li>
-<br>
+    <br>
     <li>
       <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleGardenSubmenu()">Kertészeti áruk</a>
       <ul id="homeSubmenu" [ngClass]="isGardenSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'">
         <li>
-          <a href="/search/virágcserepek" routerLink="/search/virágcserepek" routerLinkActive="active">
+          <a routerLink="/search/virágcserepek">
             virágcserepek
           </a>
         </li>
-
-
         <li>
-          <a href="/search/temetői vázák" routerLink="/search/temetői vázák" routerLinkActive="active">
+          <a routerLink="/search/temetői vázák">
             temetői vázák
           </a>
         </li>
-
-
-
         <li>
-          <a href="/search/ládák és vödrök" routerLink="/search/ládák és vödrök" routerLinkActive="active">
+          <a routerLink="/search/ládák és vödrök">
             ládák, dézsák, vödrök
           </a>
         </li>
-
         <li>
-          <a href="/search/hordók" routerLink="/search/hordók" routerLinkActive="active">
+          <a routerLink="/search/hordók">
             hordók és demizsonok
           </a>
         </li>
-
         <li>
-          <a href="/search/kannák" routerLink="/search/kannák" routerLinkActive="active">
+          <a routerLink="/search/kannák">
             kannák
           </a>
         </li>
-
         <li>
-          <a href="/search/seprűk" routerLink="/search/seprűk" routerLinkActive="active">
+          <a routerLink="/search/seprűk">
             seprűk, partvisok, hólapát
           </a>
         </li>
-
-
       </ul>
-
     </li>
-
     <li>
       <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleHouseholdSubmenu()">Háztartási áruk</a>
       <ul [ngClass]="isHouseholdSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'" id="pageSubmenu">
         <li>
-          <a href="/search/szemetesek" routerLink="/search/szemetesek" routerLinkActive="active">
+          <a routerLink="/search/szemetesek">
             szemetesek
           </a>
         </li>
-
         <li>
-          <a href="/search" routerLink="/search/evőeszköztartók" routerLinkActive="active">
+          <a routerLink="/search/evőeszköztartók">
             evőeszköztartók
           </a>
         </li>
-
-
-
         <li>
-          <a href="/search" routerLink="/search/tálak" routerLinkActive="active">
+          <a routerLink="/search/tálak">
             tálak
           </a>
         </li>
-
-
-
         <li>
-          <a href="/search" routerLink="/search/szivacsok" routerLinkActive="active">
+          <a routerLink="/search/szivacsok">
             szivacsok
           </a>
         </li>
-
       </ul>
     </li>
-
   </ul>
-
-
 </nav>
