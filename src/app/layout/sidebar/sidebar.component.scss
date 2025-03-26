@@ -30,17 +30,24 @@ ul ul a {
 
 }
 
-
 #sidebar {
 
-  z-index: 2;
-  padding-bottom: 300px;
-  height: 100%;
-  min-width: 250px;
-  max-width: 250px;
+
+  //padding-bottom: 300px;
+height: 100%;
+  //overflow: auto;
+  left: 0;
+  top: 0;
+  min-width: 50px;
+  //max-width: 250px;
+  min-height: 100vh;
+  overflow-y: auto;
+  //margin-bottom: 1000px;
   background: #60c700;
   color: #fff;
   transition: all 0.3s;
+  position: fixed;
+  z-index: 9999;
 }
 
 #sidebar .sidebar-header {
@@ -66,26 +73,55 @@ ul ul a {
 
 #close-button {
 
-  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
   cursor: pointer;
 
 }
 
 
+img#logo {
+display: block;
+  margin: 0 auto;
 
-/* lg-xl */
-@media only screen and (min-width: 992px) {
-
-
-  #close-button, #sidebar-search-box {
-    display: none;
   }
 
 
 
 
+#sidebar-desktop-title {
+  display: none;
+}
 
 
+#sidebar-mobile-title {
+  display: none;
+}
+
+#sidebar-search-box {
+
+  margin-bottom: 30px;
+}
+
+
+/* lg-xl */
+@media only screen and (min-width: 992px) {
+
+    #sidebar {
+
+      position: static;
+      min-width: 250px;
+
+    }
+
+  #close-button {
+    display: none;
+  }
+
+  #sidebar-mobile-title {
+    display: block;
+  }
 
 
 
@@ -94,13 +130,41 @@ ul ul a {
 }
 
 
+
+@media only screen and (min-width: 992px) {
+
+#sidebar-desktop-title {
+
+  display: block;
+}
+
+
+  #sidebar-mobile-title {
+
+    display: none;
+
+
+  }
+
+
+}
+
 /* sm-md */
 @media only screen and (min-width: 576px) and (max-width: 991px) {
 
 
-  #close-button, #sidebar-search-box {
+  #sidebar {
+
+    //position: absolute;
+    min-width: 100%;
+
+  }
+
+
+  #close-button, #sidebar-mobile-title {
     display: block;
   }
+
 
 
 }
@@ -109,7 +173,16 @@ ul ul a {
 /* xs */
 @media only screen and (max-width: 575px) {
 
-  #close-button, #sidebar-search-box {
+
+  #sidebar {
+
+    position: absolute;
+    min-width: 100%;
+
+  }
+
+
+  #close-button, #sidebar-mobile-title {
     display: block;
   }
 

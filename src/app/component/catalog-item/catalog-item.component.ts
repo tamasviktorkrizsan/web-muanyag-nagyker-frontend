@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
-
 
 @Component({
   selector: 'app-catalog-item',
@@ -11,7 +10,6 @@ import {NgOptimizedImage} from "@angular/common";
   templateUrl: './catalog-item.component.html',
   styleUrl: './catalog-item.component.scss'
 })
-
 
 export class CatalogItemComponent {
 
@@ -31,7 +29,6 @@ export class CatalogItemComponent {
 
 
   @Input()
-
   set category(value: string) {
     this._category = value;
   }
@@ -40,8 +37,8 @@ export class CatalogItemComponent {
     return this._category;
   }
 
-  @Input()
 
+  @Input()
   set img(value: string) {
 
     // TODO: put the img_url_prefix in a environment file
@@ -56,8 +53,8 @@ export class CatalogItemComponent {
     return this._img;
   }
 
-  @Input()
 
+  @Input()
   set name(value: string) {
     this._name = value;
   }
@@ -68,18 +65,13 @@ export class CatalogItemComponent {
 
 
   @Input()
-
   set type(value: string) {
-
     if(value == null){
-
       this._type = this.default_value;
     }
 
     else {
-
       this._type = value;
-
     }
   }
 
@@ -87,20 +79,16 @@ export class CatalogItemComponent {
     return this._type;
   }
 
-  @Input()
 
+  @Input()
   set color(value: string) {
 
-
     if(value == null){
-
       this._color = this.default_value;
     }
 
     else {
-
       this._color = value;
-
     }
   }
 
@@ -108,8 +96,8 @@ export class CatalogItemComponent {
     return this._color;
   }
 
-  @Input()
 
+  @Input()
   set product_id(value: string) {
 
     if(value == null){
@@ -120,12 +108,12 @@ export class CatalogItemComponent {
     else {
 
       this._product_id = value;
-
     }
   }
 
   get product_id(): string {
     return this._product_id;
   }
+
 
 }

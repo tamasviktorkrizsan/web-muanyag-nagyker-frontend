@@ -16,10 +16,10 @@ import { ActivatedRoute } from '@angular/router';
     NgForOf,
     NgIf
   ],
-  templateUrl: './search-form.component.html',
-  styleUrl: './search-form.component.scss'
+  templateUrl: './search-results.component.html',
+  styleUrl: './search-results.component.scss'
 })
-export class SearchFormComponent implements OnInit {
+export class SearchResultsComponent implements OnInit {
 
 
   searchForm!: FormGroup;

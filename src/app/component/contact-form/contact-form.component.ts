@@ -31,7 +31,8 @@ export class ContactFormComponent {
     constructor(private formBuilder: FormBuilder,
                 private mailFormService: MailFormService,
                 private router: Router
-    ) {
+    )
+    {
 
       this.contactForm = this.formBuilder.group({
         name: ['', Validators.required],
@@ -46,7 +47,6 @@ export class ContactFormComponent {
 
 
     onSubmit() {
-
       if (this.contactForm.valid) {
         this.mailFormService.sendData(this.contactForm.value).subscribe(
           (response) => {
@@ -64,8 +64,10 @@ export class ContactFormComponent {
 
           }
         );
-      } else {
-        console.error('Kérjük hogy ellenörizze az űrlapon megadott adatok helyességét');
+      }
+
+      else {
+        console.error("Kérjük hogy ellenörizze az űrlapon megadott adatok helyességét");
       }
     }
 

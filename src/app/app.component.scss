@@ -7,6 +7,10 @@
 
 }*/
 
+.container {
+
+  overflow: hidden;
+}
 
 main {
 
@@ -106,6 +110,13 @@ main {
     padding: 0;
     z-index: 2;
   }
+
+  main {
+
+    background-color: rgb(255, 255, 255);opacity:95%;
+
+  }
+
 }
 
 
@@ -142,6 +153,13 @@ main {
     z-index: 1;
   }
 
+  main {
+
+    background-color: rgb(255, 255, 255);opacity:95%;
+
+  }
+
+
 
   #content {
 
@@ -156,6 +174,28 @@ main {
     float: right;
 
   }
+
+
+}
+
+
+@media only screen and (max-width: 575px) {
+
+  #main-page {
+
+    min-width: 100%;
+    padding: 0;
+    z-index: 1;
+  }
+
+
+  main {
+
+    background-color: rgb(255, 255, 255);opacity:95%;
+
+  }
+
+
 
 
 }

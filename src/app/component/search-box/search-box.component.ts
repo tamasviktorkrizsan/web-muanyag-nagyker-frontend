@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {SearchCatalogItemService} from "../../service/search-catalog-item.service";
@@ -22,17 +22,12 @@ export class SearchBoxComponent implements OnInit {
 
   http!: HttpClient;
 
-  itemList: any;
-
-  item: any;
-
-  i: any;
-
+  private itemList: any;
 
   private _url_search: any;
 
-  @Input()
 
+  @Input()
   set url_search(value: any) {
     this._url_search = value;
   }
@@ -42,12 +37,11 @@ export class SearchBoxComponent implements OnInit {
   }
 
 
-
   constructor(private formBuilder: FormBuilder,
               private searchCatalogItemService: SearchCatalogItemService,
               private route: ActivatedRoute,
-              private routs: Router,
-              private previousPage: Location) {
+              private routs: Router) {
+
 
     this.searchForm = this.formBuilder.group({
       search: ['', [Validators.required, Validators.minLength(3)]]

@@ -7,7 +7,7 @@ import {SearchCatalogItemService} from "../../service/search-catalog-item.servic
 import {CatalogItemComponent} from "../../component/catalog-item/catalog-item.component";
 import { ActivatedRoute } from '@angular/router';
 import {empty} from "rxjs";
-import {SearchFormComponent} from "../../component/search-form/search-form.component";
+import {SearchResultsComponent} from "../../component/search-form/search-results.component";
 
 @Component({
   selector: 'app-search',
@@ -18,7 +18,7 @@ import {SearchFormComponent} from "../../component/search-form/search-form.compo
     CatalogItemComponent,
     NgForOf,
     NgIf,
-    SearchFormComponent
+    SearchResultsComponent
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
