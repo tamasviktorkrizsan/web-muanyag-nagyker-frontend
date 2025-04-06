@@ -1,13 +1,15 @@
 # Matejka-Muanyag-Nagyker-Frontend
 
-This repository contains the Frontend code of the Matejka Műanyagárú Nagykereskedés Website. The backend stored in a separate repository.
+This repository contains the front-end code of the Matejka Műanyagárú Nagykereskedés Website. The backend stored in a separate [repository](https://github.com/tamasviktorkrizsan/web-muanyag-nagyker-backend).
 
 
-## Project Features
+## Features
 
-- Contact form with frontend validation
-- responsive
-- Search
+- responsive design
+- Database search functionality
+- Contact form
+  - input mask
+  - Frontend validation
 
 
 ## Stack
@@ -15,9 +17,11 @@ This repository contains the Frontend code of the Matejka Műanyagárú Nagykere
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
 - Bootstrap
 
-## Install
+## Install on localhost
 
-npm install --force
+1. Install back-end from this [repository](https://github.com/tamasviktorkrizsan/web-muanyag-nagyker-backend). Follow the instructions described in the local README file.
+2. Clone this repository
+3. In the root directory run this command `npm install --force`.
 
 ## Development server
 
