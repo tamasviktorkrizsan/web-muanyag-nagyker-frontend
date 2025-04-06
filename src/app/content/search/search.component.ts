@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {NgFor, NgForOf, NgIf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {NgxMaskDirective} from "ngx-mask";
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
-import {SearchCatalogItemService} from "../../service/search-catalog-item.service";
+import {ReactiveFormsModule} from "@angular/forms";
 import {CatalogItemComponent} from "../../component/catalog-item/catalog-item.component";
 import { ActivatedRoute } from '@angular/router';
 import {empty} from "rxjs";
-import {SearchResultsComponent} from "../../component/search-form/search-results.component";
+import {SearchResultsComponent} from "../../component/search-results/search-results.component";
 
 @Component({
   selector: 'app-search',

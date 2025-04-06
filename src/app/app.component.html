@@ -1,28 +1,25 @@
 <div id="background" class="bg-image">
 
-<div class="container" id="main-page">
+  <div class="container" id="main-page">
 
-
-
-  <main>
-    <div class="wrapper">
-      <app-sidebar>
-      </app-sidebar>
-      <div id="content">
-        <app-header>
-        </app-header>
-        <div class="container">
-          <router-outlet>
-          </router-outlet>
-          <br>
+    <main>
+      <div class="wrapper">
+        <app-sidebar>
+        </app-sidebar>
+        <div id="content">
+          <app-header>
+          </app-header>
+          <div class="container">
+            <router-outlet>
+            </router-outlet>
+            <br>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
+  </div>
 
-  </main>
+  <app-footer>
+  </app-footer>
 
 </div>
-        <app-footer></app-footer>
-
-    </div>
-

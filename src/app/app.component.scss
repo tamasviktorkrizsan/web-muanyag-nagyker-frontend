@@ -1,16 +1,9 @@
 
-
-/*
-#navbarSupportedContent ul li {
-
-  margin-right: 10%;
-
-}*/
-
 .container {
 
   overflow: hidden;
 }
+
 
 main {
 
@@ -26,9 +19,6 @@ main {
   margin: 40px 0;
 }
 
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
 
 .wrapper {
   display: flex;
@@ -37,32 +27,18 @@ main {
 }
 
 
-
 #background {
 
   width: 100%;
-  /*height: 100vh;*/
   display: flex;
   flex-direction: column;
-
   background-repeat: no-repeat;
   background-position:center;
   background-attachment: fixed;
-  /*align-items: center;
-  justify-content: center;*/
-  //gap: 50px;
-
-  /*justify-content: flex-end;*/
   background-image:url("../public/assets/img/layout/bg.jpg");
 
 }
 
-
-
-
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
 
 #content {
   width: 100%;
@@ -72,21 +48,17 @@ main {
 }
 
 
-
-
-
-
 /* xl */
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
 
   #main-page {
-
     min-width: 70%;
     max-width: 80%;
     z-index: 2;
   }
 
 }
+
 
 /* lg */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -105,45 +77,27 @@ main {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
   #main-page {
-
     min-width: 100%;
     padding: 0;
     z-index: 2;
   }
 
   main {
-
     background-color: rgb(255, 255, 255);opacity:95%;
-
   }
 
 }
 
 
-
 /* sm */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-
-  /*
-  #sidebar {
-    margin-left: -250px;
-  }
-  #sidebar.active {
-    margin-left: 0;
-  }
-  .sidebarCollapse span {
-    display: nvone;
-  }
-  */
 
 
   #sidebarCollapseButton {
 
   display: none;
 
-
   }
-
 
 
   #main-page {
@@ -151,7 +105,9 @@ main {
     min-width: 100%;
     padding: 0;
     z-index: 1;
+
   }
+
 
   main {
 
@@ -160,13 +116,11 @@ main {
   }
 
 
-
   #content {
 
     z-index: 1;
+
   }
-
-
 
 
   #close-button {
@@ -174,7 +128,6 @@ main {
     float: right;
 
   }
-
 
 }
 
@@ -194,8 +147,5 @@ main {
     background-color: rgb(255, 255, 255);opacity:95%;
 
   }
-
-
-
 
 }

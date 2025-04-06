@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "a-web-muanyag-nagyker-frontend": {
+    "web-muanyag-nagyker-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/a-web-muanyag-nagyker-frontend",
+            "outputPath": "dist/web-muanyag-nagyker-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "a-web-muanyag-nagyker-frontend:build:production"
+              "buildTarget": "web-muanyag-nagyker-frontend:build:production"
             },
             "development": {
-              "buildTarget": "a-web-muanyag-nagyker-frontend:build:development"
+              "buildTarget": "web-muanyag-nagyker-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "a-web-muanyag-nagyker-frontend:build"
+            "buildTarget": "web-muanyag-nagyker-frontend:build"
           }
         },
         "test": {
@@ -100,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

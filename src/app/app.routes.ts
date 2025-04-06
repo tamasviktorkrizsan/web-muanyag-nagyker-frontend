@@ -13,13 +13,7 @@ export const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: 'services', component: ServicesComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'search', component: SearchComponent},
   {path: 'privacy-policy', component: PrivacyPolicyComponent},
-
-  // product links
-
   {path: 'search/:id', component: SearchComponent}
-
-
 
 ];

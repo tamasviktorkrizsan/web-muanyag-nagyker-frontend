@@ -1,10 +1,6 @@
 import {Component} from '@angular/core';
 import {ContactFormComponent} from "../../component/contact-form/contact-form.component";
-
-import {NgIf, NgOptimizedImage} from "@angular/common";
-/*import {NgIcon, NgIconsModule} from '@ng-icons/core';
-import { bootstrap0CircleFill } from '@ng-icons/bootstrap-icons';
-import {BrowserModule} from "@angular/platform-browser";*/
+import {NgOptimizedImage} from "@angular/common";
 
 
 @Component({
@@ -19,12 +15,6 @@ import {BrowserModule} from "@angular/platform-browser";*/
 })
 
 
-
-
 export class ContactComponent {
-
-
-
-
 
 }

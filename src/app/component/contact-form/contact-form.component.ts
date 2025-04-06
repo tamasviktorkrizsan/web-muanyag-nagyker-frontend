@@ -3,8 +3,7 @@ import {ReactiveFormsModule, FormBuilder, Validators, FormGroup} from "@angular/
 import {NgxMaskDirective} from 'ngx-mask';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {MailFormService} from "../../service/mail-form.service";
-// import {RecaptchaModule, RecaptchaFormsModule, RecaptchaV3Module} from "ng-recaptcha";
+import {MailFormService} from "../../service/mail-form/mail-form.service";
 
 // TODO: add recaptcha when this app runs from a webhost.
 
@@ -25,7 +24,7 @@ import {MailFormService} from "../../service/mail-form.service";
 
 export class ContactFormComponent {
 
-   contactForm!: FormGroup;
+   contactForm: FormGroup;
    http!: HttpClient;
 
     constructor(private formBuilder: FormBuilder,

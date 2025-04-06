@@ -13,17 +13,17 @@ import {NgOptimizedImage} from "@angular/common";
 
 export class CatalogItemComponent {
 
-  private _category!: string;
+  private _category: string = "";
 
-  private _img!: string;
+  private _img: string = "";
 
-  private _name!: string;
+  private _name: string = "";
 
-  private _type!: string;
+  private _type: string = "";
 
-  private _color!: string;
+  private _color: string = "";
 
-  private _product_id!: string;
+  private _product_id: string = "";
 
   private default_value: string = "nincs";
 

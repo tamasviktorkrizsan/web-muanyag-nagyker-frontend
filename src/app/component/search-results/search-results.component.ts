@@ -3,11 +3,11 @@ import {NgForOf, NgIf} from '@angular/common';
 import {NgxMaskDirective} from "ngx-mask";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {SearchCatalogItemService} from "../../service/search-catalog-item.service";
+import {SearchCatalogItemService} from "../../service/search-catalog-item/search-catalog-item.service";
 import {CatalogItemComponent} from "../catalog-item/catalog-item.component";
 import { ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'app-search-form',
+  selector: 'app-search-results',
   standalone: true,
   imports: [
     NgxMaskDirective,
@@ -21,7 +21,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchResultsComponent implements OnInit {
 
-
   searchForm!: FormGroup;
 
   http!: HttpClient;
@@ -31,7 +30,6 @@ export class SearchResultsComponent implements OnInit {
   item: any;
 
   i: any;
-
 
   private _url_search: any;
 
@@ -70,9 +68,7 @@ export class SearchResultsComponent implements OnInit {
     });
   }
 
-
   displayNoResult = true;
-
 
   onSubmit(){
 
@@ -80,7 +76,7 @@ export class SearchResultsComponent implements OnInit {
       this.searchCatalogItemService.sendData(this.searchForm.value).subscribe(
         (response) => {
 
-          this.itemList = response
+          this.itemList = response;
 
           console.log('POST response:', this.itemList);
 
@@ -92,7 +88,6 @@ export class SearchResultsComponent implements OnInit {
         }
       );
 
-
     }
 
     else {
@@ -101,28 +96,3 @@ export class SearchResultsComponent implements OnInit {
   }
 
 }
-
-
-
-
-/* for(const object of response){
-
-
-   <app-catalog-item [category]=object.category></app-catalog-item>
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

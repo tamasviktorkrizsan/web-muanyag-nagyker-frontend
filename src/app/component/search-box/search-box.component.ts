@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {SearchCatalogItemService} from "../../service/search-catalog-item.service";
+import {SearchCatalogItemService} from "../../service/search-catalog-item/search-catalog-item.service";
 import {ActivatedRoute} from "@angular/router";
 import {Router} from "@angular/router";
-import {Location} from '@angular/common';
+
 
 @Component({
   selector: 'app-search-box',
@@ -18,13 +18,15 @@ import {Location} from '@angular/common';
 })
 export class SearchBoxComponent implements OnInit {
 
-  searchForm!: FormGroup;
+  searchForm: FormGroup;
 
   http!: HttpClient;
 
   private itemList: any;
 
   private _url_search: any;
+
+  currentPage: string = "";
 
 
   @Input()
@@ -49,43 +51,25 @@ export class SearchBoxComponent implements OnInit {
   }
 
 
-  currentPage!: string;
-
   clickIntoTheBox() {
 
     this.currentPage = this.routs.url;
-
-    console.log(this.currentPage);
 
   }
 
 
   type(event:any) {
 
-
-    if (event.target.value.length > 0)
-    {
-
-
+    if (event.target.value.length > 0) {
       this.routs.navigate(['/search', event.target.value]);
     }
 
     else {
-      console.log(document.head.baseURI)
 
       this.routs.navigate([this.currentPage])
 
-
     }
-
-    console.log(event.target.value);
-
-
-
   }
-
-
-  // @ViewChild('search') search: NgForm;
 
 
   ngOnInit(): void {
@@ -103,39 +87,23 @@ export class SearchBoxComponent implements OnInit {
   }
 
 
-
-
   onSubmit() {
 
     if (this.searchForm.valid) {
       this.searchCatalogItemService.sendData(this.searchForm.value).subscribe(
         (response) => {
 
-          this.itemList = response
+          this.itemList = response;
 
-          console.log('POST response:', this.itemList);
         },
         (error) => {
           console.error('POST error:', error);
         }
       );
-
-
     }
 
     else {
       console.error('Form is invalid');
     }
   }
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -1,20 +1,10 @@
 <nav id="sidebar" *ngIf="isSidebarOpen">
   <i id="close-button" class="bi bi-x-lg fs-2" (click)="toggleSidebar()">
   </i>
-
-  <div class="sidebar-header" >
-   <!-- <h4 id="sidebar-desktop-title">Termékeink</h4>
-<h4 id="sidebar-mobile-title">Menü</h4>-->
-
-
-      </div>
   <div class="sidebar-header">
-
     <img id="logo" class="" [ngSrc]="'/public/assets/img/layout/nagyker_logo_temp.png'" width="168" height="264" alt="" border="0" priority="">
-
   </div>
-
-    <hr>
+  <hr>
   <div id="sidebar-search-box" class="sidebar-header">
     <app-search-box></app-search-box>
   </div>
@@ -29,7 +19,7 @@
     <li>
       <a routerLink="/contact" (click)="toggleSidebar()">Elérhetőségeink</a>
     </li>
-    </ul>
+  </ul>
 <div>
   <ul id="sidebar-product-links" class="list-unstyled">
     <li>
@@ -95,4 +85,3 @@
   </ul>
 </div>
 </nav>
-

@@ -3,7 +3,7 @@ import {NgOptimizedImage} from "@angular/common";
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {SearchBoxComponent} from "../../component/search-box/search-box.component";
 // import {AppComponent} from "../../app.component";
-import {CommonService} from "../../service/common.service";
+import {CommonService} from "../../service/common/common.service";
 
 
 @Component({
