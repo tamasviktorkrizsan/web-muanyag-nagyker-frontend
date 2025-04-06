@@ -16,7 +16,7 @@ This repository contains the front-end code of the Matejka Műanyagárú Nagyker
 
 ## Install on localhost
 
-1. Install back-end from this [repository](https://github.com/tamasviktorkrizsan/web-muanyag-nagyker-backend). Follow the instructions described in the local README file.
+1. Install the back-end API from this [repository](https://github.com/tamasviktorkrizsan/web-muanyag-nagyker-backend). Follow the instructions described in the local README file.
 2. Clone this repository
 3. In the root directory run this command `npm install --force`.
 
