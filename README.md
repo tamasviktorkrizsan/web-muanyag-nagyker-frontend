@@ -3,19 +3,16 @@
 This repository contains the front-end code of the Matejka Műanyagárú Nagykereskedés Website. The backend stored in a separate [repository](https://github.com/tamasviktorkrizsan/web-muanyag-nagyker-backend).
 
 
-## Features
+## Stack / Features
 
+- Angular 17
+- Bootstrap
 - responsive design
 - Database search functionality
 - Contact form
   - input mask
   - Frontend validation
 
-
-## Stack
-
-- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
-- Bootstrap
 
 ## Install on localhost
 
