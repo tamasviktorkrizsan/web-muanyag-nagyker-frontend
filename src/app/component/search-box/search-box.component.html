@@ -1,0 +1,5 @@
+
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <input (click)="clickIntoTheBox()" (input)="type($event)" type="text" class="form-control" id="search" name="submit_search"
+             data-toggle="tooltip" data-placement="top" value="" placeholder="Keresés" formControlName="search">
+</form>
