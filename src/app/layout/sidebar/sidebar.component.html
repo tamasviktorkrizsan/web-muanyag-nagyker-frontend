@@ -1,0 +1,87 @@
+<nav id="sidebar" *ngIf="isSidebarOpen">
+  <i id="close-button" class="bi bi-x-lg fs-2" (click)="toggleSidebar()">
+  </i>
+  <div class="sidebar-header">
+    <img id="logo" class="" [ngSrc]="'/public/assets/img/layout/nagyker_logo_temp.png'" width="168" height="264" alt="" border="0" priority="">
+  </div>
+  <hr>
+  <div id="sidebar-search-box" class="sidebar-header">
+    <app-search-box></app-search-box>
+  </div>
+  <br>
+  <ul id="sidebar-menu" class="list-unstyled">
+    <li>
+      <a routerLink="/welcome" (click)="toggleSidebar()">Rólunk</a>
+    </li>
+    <li>
+      <a routerLink="/services" (click)="toggleSidebar()">Szolgáltatásaink</a>
+    </li>
+    <li>
+      <a routerLink="/contact" (click)="toggleSidebar()">Elérhetőségeink</a>
+    </li>
+  </ul>
+<div>
+  <ul id="sidebar-product-links" class="list-unstyled">
+    <li>
+      <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleGardenSubmenu()">Kertészeti áruk</a>
+      <ul id="homeSubmenu" [ngClass]="isGardenSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'">
+        <li>
+          <a routerLink="/search/virágcserepek" (click)="toggleSidebar()">
+            virágcserepek
+          </a>
+        </li>
+        <li>
+          <a routerLink="/search/temetői vázák" (click)="toggleSidebar()">
+            temetői vázák
+          </a>
+        </li>
+        <li>
+          <a routerLink="/search/ládák és vödrök" (click)="toggleSidebar()">
+            ládák, dézsák, vödrök
+          </a>
+        </li>
+        <li>
+          <a routerLink="/search/hordók" (click)="toggleSidebar()">
+            hordók és demizsonok
+          </a>
+        </li>
+        <li>
+          <a routerLink="/search/kannák" (click)="toggleSidebar()">
+            kannák
+          </a>
+        </li>
+        <li>
+          <a routerLink="/search/seprűk" (click)="toggleSidebar()">
+            seprűk, partvisok, lapátok
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleHouseholdSubmenu()">Háztartási áruk</a>
+      <ul [ngClass]="isHouseholdSubmenuOpen ? 'list-unstyled' : 'collapse list-unstyled'" id="pageSubmenu">
+        <li>
+          <a routerLink="/search/szemetesek" (click)="toggleSidebar()">
+            szemetesek
+          </a>
+        </li>
+        <li>
+          <a routerLink="/search/evőeszköztartók" (click)="toggleSidebar()">
+            evőeszköztartók
+          </a>
+        </li>
+        <li>
+          <a routerLink="/search/tálak" (click)="toggleSidebar()">
+            tálak
+          </a>
+        </li>
+        <li>
+          <a routerLink="/search/szivacsok" (click)="toggleSidebar()">
+            szivacsok
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</nav>

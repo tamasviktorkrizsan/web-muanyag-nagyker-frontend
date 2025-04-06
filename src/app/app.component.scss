@@ -1,0 +1,151 @@
+
+.container {
+
+  overflow: hidden;
+}
+
+
+main {
+
+  background-color: rgb(255, 255, 255);opacity:100%;
+
+}
+
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+
+#background {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-position:center;
+  background-attachment: fixed;
+  background-image:url("../public/assets/img/layout/bg.jpg");
+
+}
+
+
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+
+/* xl */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+  #main-page {
+    min-width: 70%;
+    max-width: 80%;
+    z-index: 2;
+  }
+
+}
+
+
+/* lg */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+  #main-page {
+
+    min-width: 100%;
+    padding: 0;
+    z-index: 2;
+  }
+}
+
+
+
+/* md */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  #main-page {
+    min-width: 100%;
+    padding: 0;
+    z-index: 2;
+  }
+
+  main {
+    background-color: rgb(255, 255, 255);opacity:95%;
+  }
+
+}
+
+
+/* sm */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+
+  #sidebarCollapseButton {
+
+  display: none;
+
+  }
+
+
+  #main-page {
+
+    min-width: 100%;
+    padding: 0;
+    z-index: 1;
+
+  }
+
+
+  main {
+
+    background-color: rgb(255, 255, 255);opacity:95%;
+
+  }
+
+
+  #content {
+
+    z-index: 1;
+
+  }
+
+
+  #close-button {
+
+    float: right;
+
+  }
+
+}
+
+
+@media only screen and (max-width: 575px) {
+
+  #main-page {
+
+    min-width: 100%;
+    padding: 0;
+    z-index: 1;
+  }
+
+
+  main {
+
+    background-color: rgb(255, 255, 255);opacity:95%;
+
+  }
+
+}

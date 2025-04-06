@@ -1,0 +1,27 @@
+<br>
+<div class="row">
+  <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4" *ngFor="let item of itemList; index as i">
+    <div class="h6 text-center" *ngIf="displayNoResult">
+      A termék nem található!
+    </div>
+    <div class="clearfix" *ngIf="i % 3 == 0"></div>
+
+    <app-catalog-item
+
+      [category]= "item.category"
+
+      [img]= "item.img"
+
+      [name]="item.name"
+
+      [type]="item.type"
+
+      [color]="item.color"
+
+      [product_id]="item.product_id"
+    >
+
+    </app-catalog-item>
+  </div>
+</div>
+

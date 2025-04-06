@@ -1,0 +1,26 @@
+
+/* You can add global styles to this file, and also import other style files */
+
+/* TODO: remove sass package, because bootstrap provided through cdn */
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #000000;
+}
+
+body {
+  min-width: 576px;
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+}
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<br>
+<div class="row content-text">
+  <div class="col-sm-12 col-xl-6 align-middle">
+    <p class="h2" style="justify-content: center">Kapcsolatfelvétel:</p>
+    <p>Kérjük, az alábbi űrlap kitöltésével vegye fel velünk a kapcsolatot, és kérjen ajánlatot!<br>
+      (A <span class="warning-sign">*</span>-gal jelölt mezők kitöltése kötelező!)
+    </p>
+  </div>
+</div>
+<br>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label for="input_name">
+        <span class="warning-sign">*</span>Név:
+      </label>
+      <input type="text" class="form-control" id="input_name" name="submit_name"
+           data-toggle="tooltip" data-placement="top" value="" formControlName="name" autocomplete="on">
+      <span class="warning-sign"></span>
+      <br>
+      <label for="email"><span class="warning-sign">*</span>
+        E-mail cím:
+      </label>
+      <input type="email" class="form-control" id="email" name="submit_email" placeholder="vallalkozás@gmail.com"
+           maxlength="255" value="" formControlName="email" autocomplete="on">
+      <span class="warning-sign"></span>
+      <br>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label for="input_phone">Telefonszám:</label>
+      <input type="tel" id="input_phone" class="form-control" name="submit_phone" placeholder="+36309481590"
+             value="" formControlName="phone" autocomplete="on">
+      <span class="warning-sign"></span>
+      <br>
+      <label for="input_tax_id">Adószám:</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="input_tax_id" name="submit_tax_id"
+               placeholder="12345678-1-12" maxlength="13" data-toggle="tooltip" data-placement="auto"
+               title="Adószám formátum: 12345678-1-12" value="" mask="99999999-9-99" formControlName="taxId">
+        <div class="invalid-feedback"></div>
+      </div>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <label for="message"><span class="warning-sign">*</span>Üzenet:</label>
+      <textarea name="submit_message" id="message" class="form-control" rows="15" cols="15" formControlName="message"></textarea>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <input type="checkbox" id="checkbox_user_consent" name="submit_user_consent" value="Megadva" formControlName="userConsent">
+      <label class="form-check-label" for="checkbox_user_consent">
+         Elolvastam és elfogadtam az <a href="/privacy-policy" class="link-primary" target="_blank">Adatkezelési Tájékoztatót*</a>
+      </label>
+      <br>
+      <span class="warning-sign"></span>
+      <br>
+    </div>
+  </div>
+  <button type="submit" [disabled]="contactForm.invalid">
+    Submit
+  </button>
+</form>
